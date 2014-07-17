@@ -37,7 +37,7 @@ gulp ng-factory
         |- module-example.less
         |- test
         |- docs
-            |- intro.md
+            |- header.md
             |- docs.css
             |- examples
                 |- example 1
@@ -50,7 +50,7 @@ gulp ng-factory
  - .gitignore
  - CHANGELOG.md
  - CONTRIBUTING.md
- - gulpFile.js
+ - gulpfile.js
  - options.js
  - package.json
  - README.md
