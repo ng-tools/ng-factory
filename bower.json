@@ -1,0 +1,13 @@
+{
+  "name": "ui-slider",
+  "main": "ui-slider.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/douglasduteil/angular-utility-belt",
+  "authors": [
+    "..."
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "^1"
+  }
+}
