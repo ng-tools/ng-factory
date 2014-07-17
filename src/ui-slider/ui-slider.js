@@ -43,6 +43,19 @@
    * UI.Slider
    */
   angular.module('ui.slider', []).value('uiSliderConfig', {})
+
+
+  /**
+   * @ngdoc ui
+   * @name ui.slider
+   *
+   * @param {string} ngModel Assignable angular expression to data-bind to.
+   * @param {string=} min Sets the `min` validation error key if the value entered is less than `min`.
+   * @param {string=} max Sets the `max` validation error key if the value entered is greater than `max`.
+   * @param {string=} max Sets the `step` validation error key if the value entered is in the `step` range.
+   * @param {string=} required Sets `required` validation error key if the value is not entered.
+   *
+   */
     .directive('uiSlider', [
       function() {
 
@@ -57,12 +70,7 @@
         return {
           restrict: 'AE',
           require: '?ngModel',
-          template: '<div class="ui-slider-container">\n' +
-            '  <div class="ui-slider-runnable-track">\n' +
-            '    <div class="ui-slider-range"></div>\n' +
-            '    <div class="ui-slider-thumb"></div>\n' +
-            '  </div>\n' +
-            '</div>',
+          templateUrl: 'ui-slider/ui-slider.tpl.html',
           link: function(scope, iElement, attrs, ngModel) {
 
             var animationFrameRequested, lastPos, max;
