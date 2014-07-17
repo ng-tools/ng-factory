@@ -43,6 +43,19 @@
    * UI.Slider
    */
   angular.module('ui.slider', []).value('uiSliderConfig', {})
+
+
+  /**
+   * @ngdoc ui
+   * @name ui.slider
+   *
+   * @param {string} ngModel Assignable angular expression to data-bind to.
+   * @param {string=} min Sets the `min` validation error key if the value entered is less than `min`.
+   * @param {string=} max Sets the `max` validation error key if the value entered is greater than `max`.
+   * @param {string=} max Sets the `step` validation error key if the value entered is in the `step` range.
+   * @param {string=} required Sets `required` validation error key if the value is not entered.
+   *
+   */
     .directive('uiSlider', [
       function() {
 
