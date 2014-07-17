@@ -17,25 +17,22 @@
   },
   "homepage": "https://github.com/douglasduteil/angular-utility-belt",
   "devDependencies": {
-    "gulp": "^3",
-    "gulp-util": "^2",
-    "gulp-load-plugins": "^0",
+    "browser-sync": "^1",
+    "gulp": "^3.8.6",
     "gulp-changed": "^0",
-    "lodash.assign": "^2",
-
     "gulp-jshint": "^1",
-    "jshint-stylish": "^0",
-
-    "gulp-uglify": "^0",
+    "gulp-load-plugins": "^0",
     "gulp-ng-annotate": "^0",
-
+    "gulp-uglify": "^0",
+    "gulp-util": "^2",
+    "jshint-stylish": "^0",
     "karma": "^0",
-    "karma-jasmine": "^0.2",
+    "karma-chrome-launcher": "^0",
     "karma-coverage": "^0",
     "karma-firefox-launcher": "^0",
-    "karma-chrome-launcher": "^0",
+    "karma-jasmine": "^0.1",
     "karma-phantomjs-launcher": "^0",
-
-    "browser-sync": "^1"
+    "lodash.assign": "^2",
+    "run-sequence": "^0.3.6"
   }
 }
