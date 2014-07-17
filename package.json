@@ -1,0 +1,41 @@
+{
+  "name": "angular-utility-belt",
+  "version": "0.0.0",
+  "description": "angular-utility-belt ====================",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/douglasduteil/angular-utility-belt.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/douglasduteil/angular-utility-belt/issues"
+  },
+  "homepage": "https://github.com/douglasduteil/angular-utility-belt",
+  "devDependencies": {
+    "gulp": "^3",
+    "gulp-util": "^2",
+    "gulp-load-plugins": "^0",
+    "gulp-changed": "^0",
+    "lodash.assign": "^2",
+
+    "gulp-jshint": "^1",
+    "jshint-stylish": "^0",
+
+    "gulp-uglify": "^0",
+    "gulp-ng-annotate": "^0",
+
+    "karma": "^0",
+    "karma-jasmine": "^0.2",
+    "karma-coverage": "^0",
+    "karma-firefox-launcher": "^0",
+    "karma-chrome-launcher": "^0",
+    "karma-phantomjs-launcher": "^0",
+
+    "browser-sync": "^1"
+  }
+}
