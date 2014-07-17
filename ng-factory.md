@@ -46,7 +46,7 @@ gulp ng-factory
                     |- example-1.less
         |- bower.json
  - .travis.yml
- - .editorrc
+ - .editorconfig
  - .gitignore
  - CHANGELOG.md
  - CONTRIBUTING.md
