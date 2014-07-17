@@ -1,0 +1,47 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ui-slider-container {
+  -webkit-user-modify: read-only;
+  height: 21px;
+}
+
+.ui-slider-runnable-track {
+  position: relative;
+  display: block;
+  background: #ddd;
+  height: 5px;
+  top: 8px;
+}
+
+.ui-slider-thumb {
+  position: absolute;
+  cursor: pointer;
+  top: -8px;
+  margin-left: -5px;
+  width : 11px;
+  height : 21px;
+  background: #ccc;
+  border: solid 1px #aaa;
+}
+
+.ui-slider-thumb:hover {
+  background: #ddd;
+}
+
+.ui-slider-range {
+  position: absolute;
+  background: #aaa;
+  height: 100%;
+}
+
+.ui-slider-range-min {
+  left: 0;
+}
+
+.ui-slider-range-max {
+  right: 0;
+}
