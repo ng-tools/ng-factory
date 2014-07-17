@@ -1,42 +1,4 @@
-// requestAnimationFrame polyfill by Erik MÃ¶ller. fixes from Paul Irish and Tino Zijdel
-(function (window, document) {
   'use strict';
-
-
-  /**
-   * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-   * http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
-   *
-   * requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
-   *
-   * MIT license
-   */
-  var lastTime = 0;
-  var vendors = ['ms', 'moz', 'webkit', 'o'];
-  for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-    window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
-    window.cancelAnimationFrame =
-      window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
-  }
-
-  if (!window.requestAnimationFrame) {
-    window.requestAnimationFrame = function (callback) {
-      var currTime = new Date().getTime();
-      var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-      var id = window.setTimeout(function () {
-          callback(currTime + timeToCall);
-        },
-        timeToCall);
-      lastTime = currTime + timeToCall;
-      return id;
-    };
-  }
-
-  if (!window.cancelAnimationFrame) {
-    window.cancelAnimationFrame = function (id) {
-      clearTimeout(id);
-    };
-  }
 
 
   /**
@@ -56,9 +18,7 @@
    * @param {string=} required Sets `required` validation error key if the value is not entered.
    *
    */
-    .directive('uiSlider', [
-      function() {
-
+    .directive('uiSlider', function($$rAF) {
 
         // Get all the page.
         var htmlElement = angular.element(document.body.parentElement);
@@ -173,10 +133,10 @@
               lastPos = mouseEvent.clientX;
 
               // Cancel previous rAF call
-              if (animationFrameRequested) { window.cancelAnimationFrame(animationFrameRequested); }
+              if (animationFrameRequested) { animationFrameRequested(); }
 
               // Animate the page outside the event
-              animationFrameRequested = window.requestAnimationFrame(function drawAndUpdateTheModel() {
+              animationFrameRequested = $$rAF(function drawAndUpdateTheModel() {
                 _cached_layout_values();
 
                 var the_thumb_value;
@@ -200,10 +160,10 @@
                 var the_thumb_value = _formatValue(ngModel.$viewValue);
 
                 // Cancel previous rAF call
-                if (animationFrameRequested) { window.cancelAnimationFrame(animationFrameRequested); }
+                if (animationFrameRequested) { animationFrameRequested(); }
 
                 // Animate the page outside the event
-                animationFrameRequested = window.requestAnimationFrame(function drawFromTheModelValue() {
+                animationFrameRequested = $$rAF(function drawFromTheModelValue() {
                   _cached_layout_values();
                   _drawFromValue(the_thumb_value);
                 });
@@ -291,9 +251,4 @@
           }
         };
       }
-    ]);
-
-
-
-
-}(window, document));
+    );
