@@ -44,7 +44,6 @@ gulp ng-factory
                     |- example-1.tpl.html
                     |- example-1.js
                     |- example-1.less
-        |- bower.json
  - .travis.yml
  - .editorconfig
  - .gitignore
@@ -53,6 +52,7 @@ gulp ng-factory
  - gulpfile.js
  - options.js
  - package.json
+ - bower.json
  - README.md
  - LICENSE
 ```
