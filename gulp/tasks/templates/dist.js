@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var config = require('./../config'), src = config.src;
+var config = require('./../../config'), src = config.src;
 var pkg = require(process.cwd() + '/package.json');
 
 var htmlmin = require('gulp-htmlmin');
@@ -9,9 +9,9 @@ var ngtemplate = require('gulp-ngtemplate');
 var concat = require('gulp-concat-util');
 var rename = require('gulp-rename');
 
-var concatScripts = require('./../helpers/concat-scripts');
-var annotate = require('./../helpers/ng-annotate');
-var uglify = require('./../helpers/uglify-js');
+var concatScripts = require('./../../transforms/concat-scripts');
+var annotate = require('./../../transforms/ng-annotate');
+var uglify = require('./../../transforms/uglify-js');
 
 gulp.task('ng-factory:templates(dist)', function() {
 
@@ -20,7 +20,11 @@ gulp.task('ng-factory:templates(dist)', function() {
     .pipe(htmlmin({removeComments: true, collapseWhitespace: true}))
     .pipe(ngtemplate({module: pkg.name}))
     .pipe(annotate())
-    .pipe(concatScripts(pkg.name + '.tpl.js'))
+    .pipe(concatScripts(function(path) {
+      var dir = path.dirname.split(path.sep).pop();
+      path.basename = dir !== src.cwd ? dir : pkg.name;
+      path.extname = '.tpl.js';
+    }))
     .pipe(concat.header(config.banner))
     .pipe(gulp.dest(src.dist))
     .pipe(rename(function(path) { path.extname = '.min.js'; }))

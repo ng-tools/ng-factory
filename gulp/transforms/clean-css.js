@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('./gulp-through');
+var through = require('gulp-through');
 var CleanCSS = require('clean-css');
 var gutil = require('gulp-util');
 

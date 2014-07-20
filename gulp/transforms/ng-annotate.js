@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('./gulp-through');
+var through = require('gulp-through');
 var annotate = require('ng-annotate');
 var gutil = require('gulp-util');
 

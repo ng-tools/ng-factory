@@ -1,6 +1,6 @@
 'use strict';
 
-var through = require('./gulp-through');
+var through = require('gulp-through');
 var uglify = require('uglify-js');
 
 var defaults = {
