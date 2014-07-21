@@ -24,3 +24,4 @@ require('./tasks/clean/dist.js');
 require('./tasks/templates/dist.js');
 require('./tasks/scripts/dist.js');
 require('./tasks/styles/dist.js');
+require('./tasks/docs/dist.js');
