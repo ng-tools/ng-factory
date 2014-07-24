@@ -19,6 +19,11 @@ In the future this will also generate a gh-pages index.html doc with embedded ex
 
 gulp.task('ng-factory:docs(dist)', function() {
 
+  var bowerDependencies = bower.devDependencies;
+  Object.keys(bowerDependencies).forEach(function(key) {
+    bowerDependencies[key] = bowerDependencies[key].replace('|', '&#124;');
+  });
+
   var data = {
 
     // todo: fancy ascii art
@@ -28,7 +33,7 @@ gulp.task('ng-factory:docs(dist)', function() {
     header: fs.readFileSync(path.join(config.src.cwd, config.moduleName, 'docs', 'intro.md')),
 
     // scan bower
-    dependencies: bower.devDependencies,
+    dependencies: bowerDependencies,
 
     // todo : link to reald badges
     badges: [

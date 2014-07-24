@@ -3,8 +3,10 @@
 <%= header %>
 
 ## Dependencies
-<% for (key in dependencies) { %>
- - <%= key %> (<%= dependencies[key] %>)
+
+Package | Version
+--- | ---<% for (key in dependencies) { %>
+<%= key %> | **<%= dependencies[key] %>**
 <% }; %>
 
 ## Status
