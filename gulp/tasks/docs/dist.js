@@ -24,6 +24,42 @@ gulp.task('ng-factory:docs(dist)', function() {
     bowerDependencies[key] = bowerDependencies[key].replace('|', '&#124;');
   });
 
+  var badges = [
+    {
+        title: 'CodeClimate status',
+        image: 'http://img.shields.io/codeclimate/github/kabisaict/flow.svg',
+        url: 'http://url'
+    }, {
+        title: 'CodeClimate coverage',
+        image: 'http://img.shields.io/codeclimate/coverage/github/triAGENS/ashikawa-core.svg',
+        url: 'http://url'
+    }, {
+        title: 'Travis CI',
+        image: 'http://img.shields.io/travis/joyent/node.svg',
+        url: 'http://travis-ci.org/joyent/node'
+    }, {
+        title: 'Github release',
+        image: 'http://img.shields.io/github/release/qubyte/rubidium.svg',
+        url: 'http://url'
+    }, {
+        title: 'Github issues',
+        image: 'http://img.shields.io/github/issues/badges/shields.svg',
+        url: 'http://url'
+    }, {
+        title: 'NPM dependencies',
+        image: 'http://img.shields.io/david/visionmedia/express.svg',
+        url: 'http://url'
+    }, {
+        title: 'NPM dev dependencies',
+        image: 'http://img.shields.io/david/dev/visionmedia/express.svg',
+        url: 'http://url'
+    }, {
+        title: 'Browser support',
+        image: 'https://ci.testling.com/substack/tape.png',
+        url: 'http://ci.testling.com/substack/tape'
+    }
+  ];
+
   var data = {
 
     // todo: fancy ascii art
@@ -36,16 +72,7 @@ gulp.task('ng-factory:docs(dist)', function() {
     dependencies: bowerDependencies,
 
     // todo : link to reald badges
-    badges: [
-        // code climate
-        'http://img.shields.io/codeclimate/github/kabisaict/flow.svg',
-        'http://img.shields.io/codeclimate/coverage/github/triAGENS/ashikawa-core.svg',
-        // travis
-        'http://img.shields.io/travis/joyent/node.svg',
-        // github
-        'http://img.shields.io/github/release/qubyte/rubidium.svg',
-        'http://img.shields.io/github/issues/badges/shields.svg'
-    ],
+    badges: badges,
 
     // todo : scan examples and add link (or embed)
     examples: [],

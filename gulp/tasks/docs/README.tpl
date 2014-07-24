@@ -11,7 +11,7 @@ Package | Version
 
 ## Status
 <% badges.forEach(function(badge) { %>
-![](<%= badge %>)
+[![<%= badge.title %>](<%= badge.image %>)](<%= badge.url %>)
 <% }); %>
 
 ## Examples
