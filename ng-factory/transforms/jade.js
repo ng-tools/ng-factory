@@ -11,16 +11,13 @@ var defaults = {
   strict: false,
   rename: true,
   pretty: false,
-  debug: false
+  debug: false,
+  safe: true
 }
 
-module.exports = through('jade', function(file, config, skip) {
+module.exports = through('jade', function(file, config) {
   if(config.strict && path.extname(file.path) !== '.jade') return;
-  try {
-    var result = jade.render(String(file.contents), extend(config, config.locals));
-  } catch(err) {
-    return skip(err);
-  }
+  var result = jade.render(String(file.contents), extend(config, config.locals));
   file.contents = new Buffer(result);
   if(config.rename) {
     file.path = gutil.replaceExtension(file.path, '.html');
