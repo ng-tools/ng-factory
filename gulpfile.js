@@ -9,7 +9,7 @@ require('./ng-factory');
 gulp.task('build', ['dist']);
 
 gulp.task('docs', function() {
-  run('ng-factory:clean/docs(tmp)', ['ng-factory:views/docs(tmp)', 'ng-factory:scripts/docs(tmp)', 'ng-factory:connect/docs(tmp)']/*, ['ng-factory:open/docs']*/);
+  run('ng-factory:clean/docs(tmp)', ['ng-factory:views/docs(tmp)', 'ng-factory:scripts/docs(tmp)', 'ng-factory:styles/docs(tmp)', 'ng-factory:connect/docs(tmp)']/*, ['ng-factory:open/docs']*/);
 });
 
 gulp.task('dist', function() {
