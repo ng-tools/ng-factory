@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var config = require('./../../config'), src = config.src;
+var config = require('./../../config'), docs = config.docs;
 var pkg = require(process.cwd() + '/package.json');
 var path = require('path');
 
@@ -9,8 +9,7 @@ var changed = require('gulp-changed');
 var connect = require('gulp-connect');
 var template = require('./../../transforms/template');
 
-var cwd = path.resolve(__dirname, '..', '..', config.docs.cwd);
-var docs = config.docs;
+var cwd = path.resolve(__dirname, '..', '..', docs.cwd);
 
 gulp.task('ng-factory:scripts/docs(tmp)', function() {
 

@@ -15,7 +15,7 @@ var uglify = require('./../../transforms/uglify-js');
 gulp.task('ng-factory:scripts/src(dist)', function() {
 
   // Build unified pkg.name scripts
-  return gulp.src([src.scripts], {cwd: src.cwd})
+  return gulp.src(src.scripts, {cwd: src.cwd})
     .pipe(sourcemaps.init())
     .pipe(annotate())
     .pipe(concatScripts(function(path) {

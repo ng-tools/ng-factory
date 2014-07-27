@@ -14,7 +14,7 @@ angular.module('ngDocs', ['ngAnimate'])
 
   })
 
-  .controller('MainCtrl', function ($scope, $rootScope, $location) {
+  .controller('MainCtrl', function($scope, $rootScope, $location) {
 
     $scope.$location = $location;
 

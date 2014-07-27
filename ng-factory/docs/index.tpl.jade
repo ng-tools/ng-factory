@@ -48,3 +48,9 @@ html(ng-app="ngDocs")
     // build:js scripts/main.min.js
     script(src="scripts/app.js")
     // endbuild
+
+    // build:js scripts/demos.min.js
+    <% for (var i in modules) { %><% for (var j in modules[i].scripts) { %>
+    script(src="<%= modules[i].scripts[j] %>")
+    <% } %><% } %>
+    // endbuild

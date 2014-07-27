@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var config = require('./../../config'), src = config.src;
+var config = require('./../../config'), docs = config.docs;
 var pkg = require(process.cwd() + '/package.json');
 var path = require('path');
 
@@ -16,7 +16,7 @@ var debug = require('./../../transforms/debug');
 var template = require('./../../transforms/template');
 var jade = require('./../../transforms/jade');
 
-var cwd = path.resolve(__dirname, '..', '..', config.docs.cwd);
+var cwd = path.resolve(__dirname, '..', '..', docs.cwd);
 
 
 // DOCS
@@ -24,16 +24,17 @@ var cwd = path.resolve(__dirname, '..', '..', config.docs.cwd);
 
 var changed = require('gulp-changed');
 gulp.task('ng-factory:views/docs(tmp)', function() {
+  d(config.locals.modules);
 
-  var views = gulp.src(config.docs.views, {cwd: cwd, base: cwd})
-    // .pipe(changed(config.docs.tmp))
-    .pipe(template({locals: {pkg: pkg}, strict: true}))
+  var views = gulp.src(docs.views, {cwd: cwd, base: cwd})
+    // .pipe(changed(docs.tmp))
+    .pipe(template({locals: config.locals, strict: true}))
     .pipe(jade({pretty: true}))
-    .pipe(gulp.dest(config.docs.tmp))
+    .pipe(gulp.dest(docs.tmp))
     .pipe(connect.reload());
 
-  var index = gulp.src(config.docs.index, {cwd: cwd/*config.docs.cwd*/})
-    .pipe(template({locals: {pkg: pkg}, strict: true}))
+  var index = gulp.src(docs.index, {cwd: cwd/*docs.cwd*/})
+    .pipe(template({locals: config.locals, strict: true}))
     .pipe(jade({pretty: true}))
     .pipe(through.obj(function(file, encoding, next) {
       // Fake path for wiredep
@@ -42,7 +43,7 @@ gulp.task('ng-factory:views/docs(tmp)', function() {
       next(null, file);
     }))
     .pipe(wiredep({devDependencies: true, directory: 'docs/bower_components', exclude: [/jquery/, /js\/bootstrap/]}))
-    .pipe(gulp.dest(config.docs.tmp));
+    .pipe(gulp.dest(docs.tmp));
 
   return merge(views, index);
 
@@ -50,16 +51,16 @@ gulp.task('ng-factory:views/docs(tmp)', function() {
 
 gulp.task('ng-factory:views/docs(pages)', function() {
 
-  var views = gulp.src(config.docs.views, {cwd: cwd, base: cwd})
-    .pipe(changed(config.docs.tmp))
-    .pipe(template({locals: {pkg: pkg}, strict: true}))
+  var views = gulp.src(docs.views, {cwd: cwd, base: cwd})
+    .pipe(changed(docs.tmp))
+    .pipe(template({locals: config.locals, strict: true}))
     .pipe(jade({pretty: true}))
-    .pipe(gulp.dest(config.docs.tmp))
+    .pipe(gulp.dest(docs.tmp))
     .pipe(connect.reload());
 
-  var index = gulp.src(config.docs.index.replace('.jade', '.tpl.jade'), {cwd: cwd/*config.docs.cwd*/})
-    .pipe(template({locals: {pkg: pkg}, strict: true}))
-    .pipe(rename(config.docs.index))
+  var index = gulp.src(docs.index.replace('.jade', '.tpl.jade'), {cwd: cwd/*docs.cwd*/})
+    .pipe(template({locals: config.locals, strict: true}))
+    .pipe(rename(docs.index))
     .pipe(jade({pretty: true}))
     .pipe(through.obj(function(file, encoding, next) {
       // Fake path for wiredep
@@ -68,6 +69,6 @@ gulp.task('ng-factory:views/docs(pages)', function() {
       next(null, file);
     }))
     .pipe(wiredep({devDependencies: true, directory: 'docs/bower_components', exclude: [/jquery/, /js\/bootstrap/]}))
-    .pipe(gulp.dest(config.docs.tmp));
+    .pipe(gulp.dest(docs.tmp));
 
 });

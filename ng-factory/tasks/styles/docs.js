@@ -18,8 +18,8 @@ gulp.task('ng-factory:styles/docs(tmp)', function() {
 
   return gulp.src(docs.styles, {cwd: cwd, base: cwd})
     .pipe(less({paths: ['.', path.join(process.cwd(), docs.cwd)]}))
-    // .pipe(prefix('last 1 version'))
+    .pipe(prefix('last 1 version'))
     .pipe(gulp.dest(docs.tmp))
-    // .pipe(connect.reload());
+    .pipe(connect.reload());
 
 });
