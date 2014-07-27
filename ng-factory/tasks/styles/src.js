@@ -25,11 +25,11 @@ gulp.task('ng-factory:styles/src(dist)~less', function() {
       path.extname = '.css';
     }))
     .pipe(concat.header(config.banner))
-    .pipe(gulp.dest(src.dist))
+    .pipe(gulp.dest(src.dest))
     .pipe(rename(function(path) { path.extname = '.min.css'; }))
     .pipe(cleancss())
     .pipe(concat.header(config.banner))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(src.dist));
+    .pipe(gulp.dest(src.dest));
 
 });

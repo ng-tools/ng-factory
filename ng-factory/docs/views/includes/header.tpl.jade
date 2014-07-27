@@ -1,0 +1,16 @@
+.container
+  .col-md-9
+    h1 <%= pkg.name %>
+    p <%= pkg.description %>
+  .col-md-3.docs-social
+    ul
+      li.btn-github
+        iframe(src="http://ghbtns.com/github-btn.html?user=mgcrea&repo=angular-strap&type=watch&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="100", height="20")
+      li.btn-github
+        iframe(src="http://ghbtns.com/github-btn.html?user=mgcrea&repo=angular-strap&type=fork&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="100", height="20")
+      li.btn-github
+        iframe(src="http://ghbtns.com/github-btn.html?user=mgcrea&type=follow&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="100", height="20")
+      //- li.btn-twitter
+      //-   a.twitter-share-button(href="https://twitter.com/share", data-url="http://mgcrea.github.io/angular-strap", data-text="<% pkg.name - pkg.description %>")
+      //- li.btn-google
+      //-   a.g-plusone(data-href="http://mgcrea.github.io/angular-strap", data-size="medium")

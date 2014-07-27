@@ -20,8 +20,12 @@ global.dd = function() {
 // Tasks
 //
 
+require('./tasks/connect/docs.js');
+require('./tasks/clean/docs.js');
 require('./tasks/clean/src.js');
 require('./tasks/templates/src.js');
 require('./tasks/scripts/src.js');
+require('./tasks/scripts/docs.js');
 require('./tasks/styles/src.js');
 require('./tasks/readme/src.js');
+require('./tasks/views/docs.js');

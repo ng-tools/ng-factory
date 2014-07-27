@@ -96,9 +96,9 @@ gulp.task('ng-factory:readme/src', function() {
   });
 
   d(config);
-  gulp.src('README.src.tpl', {cwd: __dirname})
+  gulp.src('README.tpl.md', {cwd: __dirname})
     // .pipe(through(function(file, encoding, next) { d(file); next(); }))
-    .pipe(template(data))
+    .pipe(template({locals: data}))
     .pipe(rename('README.md'))
     .pipe(gulp.dest('.'));
 

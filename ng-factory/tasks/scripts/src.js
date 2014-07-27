@@ -24,11 +24,11 @@ gulp.task('ng-factory:scripts/src(dist)', function() {
       path.extname = '.js';
     }))
     .pipe(concat.header(config.banner))
-    .pipe(gulp.dest(src.dist))
+    .pipe(gulp.dest(src.dest))
     .pipe(rename(function(path) { path.extname = '.min.js'; }))
     .pipe(uglify())
     .pipe(concat.header(config.banner))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(src.dist));
+    .pipe(gulp.dest(src.dest));
 
 });

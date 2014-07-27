@@ -8,12 +8,16 @@ require('./ng-factory');
 
 gulp.task('build', ['dist']);
 
+gulp.task('docs', function() {
+  run('ng-factory:clean/docs(tmp)', ['ng-factory:views/docs(tmp)', 'ng-factory:scripts/docs(tmp)', 'ng-factory:connect/docs(tmp)']/*, ['ng-factory:open/docs']*/);
+});
+
 gulp.task('dist', function() {
   run('ng-factory:readme/src', 'ng-factory:clean/src(dist)', ['ng-factory:templates/src(dist)', 'ng-factory:styles/src(dist)~less', 'ng-factory:scripts/src(dist)']);
 });
 
 gulp.task('pages', function() {
-  run('ng-factory:clean/docs(pages)', ['ng-factory:templates/docs(pages)', 'ng-factory:styles/docs(pages)~less', 'ng-factory:scripts/docs(pages)']);
+  run('ng-factory:clean/docs(pages)', ['ng-factory:views/docs(pages)', 'connect:src'], ['open:src', 'watch:src']);
 });
 
 

@@ -5,7 +5,7 @@ var pkg = require(process.cwd() + '/package.json');
 
 exports.src = {
   cwd: 'src',
-  dist: 'dist',
+  dest: 'dist',
   tmp: '.tmp',
   scripts: '{,*/}*.js',
   styles: '{,*/}*.{less,css}',
@@ -15,12 +15,13 @@ exports.src = {
 
 exports.docs = {
   cwd: 'docs',
-  dist: 'pages',
+  dest: 'pages',
   tmp: '.tmp',
   scripts: 'scripts/**/*.js',
   styles: 'styles/*.less',
+  views: 'views/**/*.jade',
   images: 'images/{,*/}*.{jpg,png,svg}',
-  index: 'index.html'
+  index: 'index{,.tpl}.jade'
 };
 
 exports.ports = {

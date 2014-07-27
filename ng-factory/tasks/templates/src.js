@@ -26,10 +26,10 @@ gulp.task('ng-factory:templates/src(dist)', function() {
       path.extname = '.tpl.js';
     }))
     .pipe(concat.header(config.banner))
-    .pipe(gulp.dest(src.dist))
+    .pipe(gulp.dest(src.dest))
     .pipe(rename(function(path) { path.extname = '.min.js'; }))
     .pipe(uglify())
     .pipe(concat.header(config.banner))
-    .pipe(gulp.dest(src.dist))
+    .pipe(gulp.dest(src.dest))
 
 });
