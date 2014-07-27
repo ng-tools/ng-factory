@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var template = require('./../../transforms/template');
 var fs = require('fs');
 var path = require('path');
+var through = require('through2');
 
 
 /*
@@ -85,6 +86,7 @@ gulp.task('ng-factory:readme/src', function() {
   };
 
   // grab the intro for each example if any
+  // todo : add support for multiple modules
   var examplesPath = path.join(process.cwd(), config.src.cwd, pkg.name, 'docs', 'examples');
   fs.readdirSync(examplesPath).forEach(function(example) {
     var text = fs.readFileSync(path.join(examplesPath, example, example + '.md'));
@@ -93,10 +95,11 @@ gulp.task('ng-factory:readme/src', function() {
     data.examples.push(text);
   });
 
-
-  gulp.src('./README.src.tpl')
+  d(config);
+  gulp.src('README.src.tpl', {cwd: __dirname})
+    // .pipe(through(function(file, encoding, next) { d(file); next(); }))
     .pipe(template(data))
-    .pipe(rename(function(path) { path.extname = '.md'; }))
-    .pipe(gulp.dest(config.src.dist));
+    .pipe(rename('README.md'))
+    .pipe(gulp.dest('.'));
 
 });

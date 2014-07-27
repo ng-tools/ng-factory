@@ -9,7 +9,7 @@ require('./ng-factory');
 gulp.task('build', ['dist']);
 
 gulp.task('dist', function() {
-  run('ng-factory:clean/src(dist)', ['ng-factory:templates/src(dist)', 'ng-factory:styles/src(dist)~less', 'ng-factory:scripts/src(dist)']);
+  run('ng-factory:readme/src', 'ng-factory:clean/src(dist)', ['ng-factory:templates/src(dist)', 'ng-factory:styles/src(dist)~less', 'ng-factory:scripts/src(dist)']);
 });
 
 gulp.task('pages', function() {

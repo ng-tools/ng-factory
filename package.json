@@ -1,5 +1,5 @@
 {
-  "name": "angular-utility-belt",
+  "name": "ui-slider",
   "version": "0.0.0",
   "description": "angular-utility-belt ====================",
   "main": "Gulpfile.js",
@@ -57,6 +57,7 @@
     "xtend": "^3.0.0"
   },
   "dependencies": {
+    "lodash.template": "^2.4.1",
     "merge-stream": "^0.1.5"
   }
 }
