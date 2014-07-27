@@ -24,3 +24,4 @@ require('./tasks/clean/src.js');
 require('./tasks/templates/src.js');
 require('./tasks/scripts/src.js');
 require('./tasks/styles/src.js');
+require('./tasks/docs/dist.js');
