@@ -7,6 +7,7 @@ var path = require('path');
 
 var defaults = {
   strict: false,
+  rename: true,
   debug: true
 }
 
@@ -15,6 +16,8 @@ module.exports = through('less', function(file, config) {
     if(options.strict && path.extname(file.path) !== '.less') return;
     if(err) return this.emit('error', new gutil.PluginError('less', err));
     file.contents = new Buffer(result);
-    file.path = gutil.replaceExtension(file.path, '.css');
+    if(config.rename) {
+      file.path = gutil.replaceExtension(file.path, '.css');
+    }
   });
 }, defaults);

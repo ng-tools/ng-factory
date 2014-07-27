@@ -1,0 +1,9 @@
+.navbar.navbar-default.navbar-fixed-top(role="navigation")
+  .container
+    .navbar-header
+      a.navbar-brand(href="#") <%= pkg.name %>
+    .navbar-content
+      ul.nav.navbar-nav
+        li(data-match-route="^/docs"): a(href="#/docs") Docs
+      ul.nav.navbar-nav.navbar-right
+        li: a(ng-click="logout()") #[i.fa.fa-unlock] Logout

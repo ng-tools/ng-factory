@@ -35,8 +35,7 @@ html(ng-app="ngDocs")
     // endbuild
 
   body(ng-controller="MainCtrl")
-    //- header(ng-include="'views/includes/navbar.html'")
-    //- .container.am-fade(ng-view)
+    nav(ng-include="'views/includes/navbar.html'")
     header(ng-include="'views/includes/header.html'")
     .container(ng-include="'views/includes/container.html'")
     footer(ng-include="'views/includes/footer.html'")

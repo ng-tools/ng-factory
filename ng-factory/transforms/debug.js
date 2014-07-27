@@ -9,5 +9,6 @@ var defaults = {
 }
 
 module.exports = through('debug', function(file, config) {
+  if(!config.debug) return;
   d(file);
 }, defaults);
