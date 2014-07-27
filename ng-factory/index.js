@@ -30,3 +30,5 @@ require('./tasks/styles/src.js');
 require('./tasks/styles/docs.js');
 require('./tasks/readme/src.js');
 require('./tasks/views/docs.js');
+require('./tasks/jshint/src');
+require('./tasks/jshint/test');
