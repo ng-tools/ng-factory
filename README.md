@@ -7,7 +7,13 @@ My module is awesome in many ways !
 
 Package | Version
 --- | ---
-angular | **^1**
+angular | **^1.3.0**
+
+angular-animate | **^1.3.0**
+
+bootstrap | **^3.2.0**
+
+font-awesome | **^4.1.0**
 
 
 ## Status
