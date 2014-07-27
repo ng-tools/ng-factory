@@ -12,7 +12,7 @@ var less = require('./../../transforms/less');
 var cleancss = require('./../../transforms/clean-css');
 var prefix = require('gulp-autoprefixer');
 
-gulp.task('ng-factory:styles~less(dist)', function() {
+gulp.task('ng-factory:styles/src(dist)~less', function() {
 
   // Build unified pkg.name styles
   return gulp.src([src.styles], {cwd: src.cwd})

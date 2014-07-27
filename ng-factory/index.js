@@ -20,7 +20,7 @@ global.dd = function() {
 // Tasks
 //
 
-require('./tasks/clean/dist.js');
-require('./tasks/templates/dist.js');
-require('./tasks/scripts/dist.js');
-require('./tasks/styles/dist.js');
+require('./tasks/clean/src.js');
+require('./tasks/templates/src.js');
+require('./tasks/scripts/src.js');
+require('./tasks/styles/src.js');

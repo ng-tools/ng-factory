@@ -32,6 +32,6 @@ exports.banner = gutil.template('/**\n' +
   ' * <%= pkg.name %>\n' +
   ' * @version v<%= pkg.version %> - <%= today %>\n' +
   ' * @link <%= pkg.homepage %>\n' +
-  ' * @author <%= pkg.author.name %> (<%= pkg.author.email %>)\n' +
+  ' * @author <%= pkg.author.name %> <<%= pkg.author.email %>> (<%= pkg.author.url %>)\n' +
   ' * @license MIT License, http://www.opensource.org/licenses/MIT\n' +
   ' */\n', {file: '', pkg: pkg, today: new Date().toISOString().substr(0, 10)});

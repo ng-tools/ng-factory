@@ -4,16 +4,16 @@ var gulp = require('gulp');
 var run = require('run-sequence');
 
 // Load ngFactory tasks
-require('./gulp');
+require('./ng-factory');
 
 gulp.task('build', ['dist']);
 
 gulp.task('dist', function() {
-  run('ng-factory:clean(dist)', ['ng-factory:templates(dist)', 'ng-factory:styles~less(dist)', 'ng-factory:scripts(dist)']);
+  run('ng-factory:clean/src(dist)', ['ng-factory:templates/src(dist)', 'ng-factory:styles/src(dist)~less', 'ng-factory:scripts/src(dist)']);
 });
 
 gulp.task('pages', function() {
-  run('ng-factory:clean(pages)', ['ng-factory:templates(pages)', 'ng-factory:styles~less(pages)', 'ng-factory:scripts(pages)']);
+  run('ng-factory:clean/docs(pages)', ['ng-factory:templates/docs(pages)', 'ng-factory:styles/docs(pages)~less', 'ng-factory:scripts/docs(pages)']);
 });
 
 

@@ -10,7 +10,11 @@
     "type": "git",
     "url": "https://github.com/douglasduteil/angular-utility-belt.git"
   },
-  "author": "",
+  "author": {
+    "name": "Foo Bar",
+    "email": "foo@bar.com",
+    "url": "https://github.com/foo"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/douglasduteil/angular-utility-belt/issues"
@@ -35,6 +39,7 @@
     "gulp-through": "^0.2.1",
     "gulp-uglify": "^0",
     "gulp-util": "^3.0.0",
+    "js-beautify": "^1.5.1",
     "jshint-stylish": "^0",
     "karma": "^0",
     "karma-chrome-launcher": "^0",
@@ -46,9 +51,11 @@
     "lodash.assign": "^2",
     "ng-annotate": "^0.9.7",
     "run-sequence": "^0.3.6",
-    "stream-combiner": "^0.2.1",
     "through2": "^0.5.1",
     "uglify-js": "^2.4.15",
     "xtend": "^3.0.0"
+  },
+  "dependencies": {
+    "merge-stream": "^0.1.5"
   }
 }

@@ -12,7 +12,7 @@ var concatScripts = require('./../../transforms/concat-scripts');
 var annotate = require('./../../transforms/ng-annotate');
 var uglify = require('./../../transforms/uglify-js');
 
-gulp.task('ng-factory:scripts(dist)', function() {
+gulp.task('ng-factory:scripts/src(dist)', function() {
 
   // Build unified pkg.name scripts
   return gulp.src([src.scripts], {cwd: src.cwd})
