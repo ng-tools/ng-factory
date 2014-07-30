@@ -8,8 +8,8 @@ var concat = require('gulp-concat-util');
 var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
 
-var less = require('./../../transforms/less');
-var cleancss = require('./../../transforms/clean-css');
+var less = config.requireTransform('less');
+var cleancss = config.requireTransform('clean-css');
 var prefix = require('gulp-autoprefixer');
 
 gulp.task('ng-factory:styles/src(dist)~less', function() {

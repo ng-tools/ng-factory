@@ -4,6 +4,10 @@ var config = exports;
 var gutil = require('gulp-util');
 var pkg = require(process.cwd() + '/package.json');
 
+exports.requireTransform = function(name){
+  return require('./transforms/' + name);
+};
+
 exports.src = {
   cwd: 'src',
   dest: 'dist',

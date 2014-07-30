@@ -9,9 +9,9 @@ var ngtemplate = require('gulp-ngtemplate');
 var concat = require('gulp-concat-util');
 var rename = require('gulp-rename');
 
-var concatScripts = require('./../../transforms/concat-scripts');
-var annotate = require('./../../transforms/ng-annotate');
-var uglify = require('./../../transforms/uglify-js');
+var concatScripts = config.requireTransform('concat-scripts');
+var annotate = config.requireTransform('ng-annotate');
+var uglify = config.requireTransform('uglify-js');
 
 gulp.task('ng-factory:templates/src(dist)', function() {
 

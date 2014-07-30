@@ -7,7 +7,8 @@ var path = require('path');
 
 var changed = require('gulp-changed');
 var connect = require('gulp-connect');
-var template = require('./../../transforms/template');
+
+var template = config.requireTransform('template');
 
 var cwd = path.resolve(__dirname, '..', '..', docs.cwd);
 
