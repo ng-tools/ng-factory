@@ -8,6 +8,7 @@ exports.src = {
   cwd: 'src',
   dest: 'dist',
   tmp: '.tmp',
+  test: '{,*/}test{,*/}*.spec.js',
   scripts: '{,*/}*.js',
   styles: '{,*/}*.{less,css}',
   templates: '{,*/}*.tpl.html',

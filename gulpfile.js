@@ -21,6 +21,9 @@ gulp.task('pages', function() {
   run('ng-factory:clean/docs(pages)', ['ng-factory:views/docs(pages)', 'connect:src'], ['open:src', 'watch:src']);
 });
 
+gulp.task('lint', function() {
+  return run(['ng-factory:jshint(src)', 'ng-factory:jshint(test)']);
+});
 
 // var runSequence = require('run-sequence');
 // gulp.task('default', ['dist']);
