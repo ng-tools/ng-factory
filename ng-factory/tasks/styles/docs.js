@@ -6,9 +6,9 @@ var pkg = require(process.cwd() + '/package.json');
 var path = require('path');
 
 var concat = require('gulp-concat-util');
-var less = require('./../../transforms/less');
+var less = config.requireTransform('less');
 var connect = require('gulp-connect');
-var cleancss = require('./../../transforms/clean-css');
+var cleancss = config.requireTransform('clean-css');
 var prefix = require('gulp-autoprefixer');
 
 var cwd = path.resolve(__dirname, '..', '..', config.docs.cwd);

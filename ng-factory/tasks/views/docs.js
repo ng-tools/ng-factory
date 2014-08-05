@@ -12,9 +12,9 @@ var through = require('through2');
 var merge = require('merge-stream');
 var connect = require('gulp-connect');
 
-var debug = require('./../../transforms/debug');
-var template = require('./../../transforms/template');
-var jade = require('./../../transforms/jade');
+var debug = config.requireTransform('debug');
+var template = config.requireTransform('template');
+var jade = config.requireTransform('jade');
 
 var cwd = path.resolve(__dirname, '..', '..', docs.cwd);
 
