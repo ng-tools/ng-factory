@@ -2,7 +2,7 @@
 
 angular.module('ngDocs', ['ngAnimate'])
 
-  .constant('version', 'v<%= pkg.version %>')
+  .constant('version', 'v{{ pkg.version }}')
 
   .config(function($locationProvider, $sceProvider) {
 
