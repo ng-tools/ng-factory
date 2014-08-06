@@ -47,6 +47,6 @@ var glob = require('glob');
 exports.locals = {
   pkg: pkg,
   modules: glob.sync('*', {cwd: config.src.cwd}).map(function(name) {
-    return {name: name, scripts: glob.sync(name + '/docs/{,*/}*.js', {cwd: config.src.cwd})};
+    return {name: name, scripts: glob.sync(name + '/docs/{,*/}*.js', {cwd: config.src.cwd}), views: glob.sync(name + '/docs/{,*/}*.{html,jade}', {cwd: config.src.cwd})};
   })
 };
