@@ -13,7 +13,7 @@ var merge = require('merge-stream');
 var connect = require('gulp-connect');
 
 var debug = config.requireTransform('debug');
-var template = config.requireTransform('template');
+var nunjucks = config.requireTransform('nunjucks');
 var jade = config.requireTransform('jade');
 
 var cwd = path.resolve(__dirname, '..', '..', docs.cwd);
@@ -24,17 +24,17 @@ var cwd = path.resolve(__dirname, '..', '..', docs.cwd);
 
 var changed = require('gulp-changed');
 gulp.task('ng-factory:views/docs(tmp)', function() {
-  d(config.locals.modules);
+  d(config.locals);
 
   var views = gulp.src(docs.views, {cwd: cwd, base: cwd})
     // .pipe(changed(docs.tmp))
-    .pipe(template({locals: config.locals, strict: true}))
+    .pipe(nunjucks({locals: config.locals, strict: true}))
     .pipe(jade({pretty: true}))
     .pipe(gulp.dest(docs.tmp))
     .pipe(connect.reload());
 
   var index = gulp.src(docs.index, {cwd: cwd/*docs.cwd*/})
-    .pipe(template({locals: config.locals, strict: true}))
+    .pipe(nunjucks({locals: config.locals, strict: true}))
     .pipe(jade({pretty: true}))
     .pipe(through.obj(function(file, encoding, next) {
       // Fake path for wiredep
@@ -53,13 +53,13 @@ gulp.task('ng-factory:views/docs(pages)', function() {
 
   var views = gulp.src(docs.views, {cwd: cwd, base: cwd})
     .pipe(changed(docs.tmp))
-    .pipe(template({locals: config.locals, strict: true}))
+    .pipe(nunjucks({locals: config.locals, strict: true}))
     .pipe(jade({pretty: true}))
     .pipe(gulp.dest(docs.tmp))
     .pipe(connect.reload());
 
   var index = gulp.src(docs.index.replace('.jade', '.tpl.jade'), {cwd: cwd/*docs.cwd*/})
-    .pipe(template({locals: config.locals, strict: true}))
+    .pipe(nunjucks({locals: config.locals, strict: true}))
     .pipe(rename(docs.index))
     .pipe(jade({pretty: true}))
     .pipe(through.obj(function(file, encoding, next) {
