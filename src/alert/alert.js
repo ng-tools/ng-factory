@@ -8,6 +8,33 @@ angular.module('mgcrea.ngStrap.alert', ['mgcrea.ngStrap.modal'])
 
   .provider('$alert', function() {
 
+  /**
+   * @ngdoc property
+   * @name $alertProvider#defaults
+   * @description
+   *
+   * Object containing default values for all {@link ng.$http $http} requests.
+   *
+   * - **`defaults.animation`** - {string} - Class to be added for animation purposes
+   * Defaults value is `'am-fade'`.
+   *
+   * - **`defaults.prefixClass`** - {string} - Prefix prepended to class names and events
+   * Defaults value is `'alert'`.
+   *
+   * - **`defaults.placement`** - {string} - Name of HTTP header to populate with the
+   * XSRF token. Defaults value is `'X-XSRF-TOKEN'`.
+   *
+   * - **`defaults.placement`** - {string} - Name of HTTP header to populate with the
+   * XSRF token. Defaults value is `'X-XSRF-TOKEN'`.
+   *
+   * - **`defaults.headers`** - {Object} - Default headers for all $http requests.
+   * Refer to {@link ng.$http#setting-http-headers $http} for documentation on
+   * setting default headers.
+   *     - **`defaults.headers.common`**
+   *     - **`defaults.headers.post`**
+   *     - **`defaults.headers.put`**
+   *     - **`defaults.headers.patch`**
+   **/
     var defaults = this.defaults = {
       animation: 'am-fade',
       prefixClass: 'alert',
