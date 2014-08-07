@@ -1,20 +1,22 @@
-# ui-slider
+# bs-alert [![Build Status](http://img.shields.io/travis/douglasduteil/angular-utility-belt.svg)](http://travis-ci.org/douglasduteil/angular-utility-belt)
 
-My module is awesome in many ways !
+Alerts are styled tiny dialogs that inherit the behavior of modals.
 
+## Examples
+
+
+## Usage
+minimalist ngDocs API
 
 ## Dependencies
 
 Package | Version
 --- | ---
 angular | **^1.3.0**
-
 angular-animate | **^1.3.0**
-
 bootstrap | **^3.2.0**
-
 font-awesome | **^4.1.0**
-
+bootstrap-additions | **~0.2.3**
 
 ## Status
 
@@ -35,29 +37,30 @@ font-awesome | **^4.1.0**
 [![Browser support](https://ci.testling.com/substack/tape.png)](http://ci.testling.com/substack/tape)
 
 
-## Examples
-
-### Minimal example
-
-Minimal example demonstrating basic usage
-
-
- -> Link to live example
-
-### Slider with steps
-
-This example demonstrates how to use the steps attribute
-
-
- -> Link to live example
-
-
-## API
-minimalist ngDocs API
-
 ## Contributing
 
 Please submit all pull requests the against master branch. If your unit test contains JavaScript patches or features, you should include relevant unit tests. Thanks!
 
 ## License
-Licensed under : MIT
+
+  The MIT License (MIT)
+  
+  Copyright (c) 2014 Douglas Duteil
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.

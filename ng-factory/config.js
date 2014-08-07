@@ -8,6 +8,13 @@ exports.requireTransform = function(name){
   return require('./transforms/' + name);
 };
 
+if(pkg.repository) {
+  var url = pkg.repository.url || pkg.repository;
+  var split = url.replace(/\.git$/, '').split('/');
+  pkg.repository.name = split.pop();
+  pkg.repository.owner = split.pop();
+}
+
 exports.src = {
   cwd: 'src',
   dest: 'dist',

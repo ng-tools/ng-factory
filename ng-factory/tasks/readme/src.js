@@ -1,11 +1,11 @@
 'use strict';
 
 var gulp = require('gulp');
-var config = require('./../../config');
+var config = require('./../../config'), docs = config.docs;
 var pkg = require(process.cwd() + '/package.json');
 var bower = require(process.cwd() + '/bower.json');
 var rename = require('gulp-rename');
-var template = config.requireTransform('template');
+var template = config.requireTransform('nunjucks');
 var fs = require('fs');
 var path = require('path');
 var through = require('through2');
@@ -27,47 +27,51 @@ gulp.task('ng-factory:readme/src', function() {
 
   var badges = [
     {
-        title: 'CodeClimate status',
-        image: 'http://img.shields.io/codeclimate/github/kabisaict/flow.svg',
-        url: 'http://url'
+      title: 'CodeClimate status',
+      image: 'http://img.shields.io/codeclimate/github/kabisaict/flow.svg',
+      url: 'http://url'
     }, {
-        title: 'CodeClimate coverage',
-        image: 'http://img.shields.io/codeclimate/coverage/github/triAGENS/ashikawa-core.svg',
-        url: 'http://url'
+      title: 'CodeClimate coverage',
+      image: 'http://img.shields.io/codeclimate/coverage/github/triAGENS/ashikawa-core.svg',
+      url: 'http://url'
     }, {
-        title: 'Travis CI',
-        image: 'http://img.shields.io/travis/joyent/node.svg',
-        url: 'http://travis-ci.org/joyent/node'
+      title: 'Travis CI',
+      image: 'http://img.shields.io/travis/joyent/node.svg',
+      url: 'http://travis-ci.org/joyent/node'
     }, {
-        title: 'Github release',
-        image: 'http://img.shields.io/github/release/qubyte/rubidium.svg',
-        url: 'http://url'
+      title: 'Github release',
+      image: 'http://img.shields.io/github/release/qubyte/rubidium.svg',
+      url: 'http://url'
     }, {
-        title: 'Github issues',
-        image: 'http://img.shields.io/github/issues/badges/shields.svg',
-        url: 'http://url'
+      title: 'Github issues',
+      image: 'http://img.shields.io/github/issues/badges/shields.svg',
+      url: 'http://url'
     }, {
-        title: 'NPM dependencies',
-        image: 'http://img.shields.io/david/visionmedia/express.svg',
-        url: 'http://url'
+      title: 'NPM dependencies',
+      image: 'http://img.shields.io/david/visionmedia/express.svg',
+      url: 'http://url'
     }, {
-        title: 'NPM dev dependencies',
-        image: 'http://img.shields.io/david/dev/visionmedia/express.svg',
-        url: 'http://url'
+      title: 'NPM dev dependencies',
+      image: 'http://img.shields.io/david/dev/visionmedia/express.svg',
+      url: 'http://url'
     }, {
-        title: 'Browser support',
-        image: 'https://ci.testling.com/substack/tape.png',
-        url: 'http://ci.testling.com/substack/tape'
+      title: 'Browser support',
+      image: 'https://ci.testling.com/substack/tape.png',
+      url: 'http://ci.testling.com/substack/tape'
     }
   ];
 
-  var data = {
+  var locals = {
+
+    pkg: pkg,
+
+    url: [pkg.repository.owner, pkg.repository.name].join('/'),
 
     // todo: fancy ascii art
     logo: '# ' + pkg.name,
 
     // add intro from modules/docs/intro.md
-    header: fs.readFileSync(path.join(config.src.cwd, pkg.name, 'docs', 'intro.md')),
+    // header: fs.readFileSync(path.join(config.src.cwd, pkg.name, 'docs', 'intro.md')),
 
     // scan bower
     dependencies: bowerDependencies,
@@ -82,9 +86,10 @@ gulp.task('ng-factory:readme/src', function() {
     ngdocs: 'minimalist ngDocs API',
 
     // add licence from package
-    license: 'Licensed under : ' + pkg.license
+    license: fs.readFileSync('LICENSE').toString().replace(/(?:\r?\n)/g, '\n  ')
   };
 
+  /*
   // grab the intro for each example if any
   // todo : add support for multiple modules
   var examplesPath = path.join(process.cwd(), config.src.cwd, pkg.name, 'docs', 'examples');
@@ -93,13 +98,11 @@ gulp.task('ng-factory:readme/src', function() {
     // todo : generate a direct link to the gh-pages branch
     text += '\n\n -> Link to live example';
     data.examples.push(text);
-  });
+  });*/
 
-  d(config);
-  gulp.src('README.tpl.md', {cwd: __dirname})
+  gulp.src('README.tpl.md', {cwd: docs.cwd})
     // .pipe(through(function(file, encoding, next) { d(file); next(); }))
-    .pipe(template({locals: data}))
-    .pipe(rename('README.md'))
+    .pipe(template({locals: locals}))
     .pipe(gulp.dest('.'));
 
 });
