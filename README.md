@@ -1,5 +1,5 @@
 # bs-alert
-[![Build Status](http://img.shields.io/travis/douglasduteil/angular-utility-belt.svg)](http://travis-ci.org/douglasduteil/angular-utility-belt) [![Coverage Status](http://img.shields.io/codeclimate/coverage/github/douglasduteil/angular-utility-belt.svg)](http://url) [![Github Releases](http://img.shields.io/github/release/douglasduteil/angular-utility-belt.svg)](http://github.com/douglasduteil/angular-utility-belt/releases) [![Github Issues](http://img.shields.io/github/issues/douglasduteil/angular-utility-belt.svg)](http://github.com/douglasduteil/angular-utility-belt/issues) 
+[![Build Status](http://img.shields.io/travis/douglasduteil/angular-utility-belt.svg)](http://travis-ci.org/douglasduteil/angular-utility-belt) [![Coverage Status](http://img.shields.io/codeclimate/coverage/github/douglasduteil/angular-utility-belt.svg)](http://url) [![Github Releases](http://img.shields.io/badge/release-0.1.0-orange.svg)](http://github.com/douglasduteil/angular-utility-belt/releases) [![Github Issues](http://img.shields.io/github/issues/douglasduteil/angular-utility-belt.svg)](http://github.com/douglasduteil/angular-utility-belt/issues) 
 
 <img align="right" height="300" src="http://bower.io/img/bower-logo.png">
 
@@ -61,7 +61,7 @@ angular.module('mgcrea.ngStrapDocs')
 ```
 
 ## Usage
-minimalist ngDocs API
+
 
 ## Dependencies
 
