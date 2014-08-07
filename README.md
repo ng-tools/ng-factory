@@ -4,7 +4,7 @@ Alerts are styled tiny dialogs that inherit the behavior of modals.
 
 ## Examples
 
-- **alert** - [01-directive.html](//github.com/douglasduteil/angular-utility-belt/src/alert/docs/examples/01-directive.html)
+- **alert** - [01-directive.html](src/alert/docs/examples/01-directive.html)
 
 ``` .html
 <!-- Button to trigger a default alert with a scope as an object {title:'', content:'', etc.} -->
@@ -30,7 +30,7 @@ Alerts are styled tiny dialogs that inherit the behavior of modals.
 <div id="alerts-container"></div>
 
 ```
-- **alert** - [02-service.js](//github.com/douglasduteil/angular-utility-belt/src/alert/docs/examples/02-service.js)
+- **alert** - [02-service.js](src/alert/docs/examples/02-service.js)
 
 ``` .js
 'use strict';
