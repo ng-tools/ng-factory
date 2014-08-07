@@ -1,7 +1,7 @@
 {% extends "ng-factory/docs/README.tpl.md" %}
 
 {% block logo %}
-<img align="right" height="300" src="http://bower.io/img/bower-logo.png">
+<img align="right" height="200" src="http://bower.io/img/bower-logo.png">
 {%- endblock %}
 
 {% block description %}
