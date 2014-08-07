@@ -86,7 +86,7 @@ gulp.task('ng-factory:readme/src', function() {
     ngdocs: 'minimalist ngDocs API',
 
     // add licence from package
-    license: fs.readFileSync('LICENSE').toString().replace(/(?:\r?\n)/g, '\n  ')
+    license: fs.readFileSync('LICENSE').toString().replace(/(?:\r?\n)/g, '\n    ')
   };
 
   /*
