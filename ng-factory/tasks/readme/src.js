@@ -51,7 +51,7 @@ gulp.task('ng-factory:readme/src', function() {
     }, {
       title: 'Github Releases',
       // image: 'http://img.shields.io/github/release/{{ url }}.svg',
-      image: 'http://img.shields.io/badge/release-{{ pkg.version }}-orange.svg',
+      image: 'http://img.shields.io/badge/release-v{{ pkg.version }}-orange.svg',
       url: 'http://github.com/{{ url }}/releases'
     }, {
       title: 'Github Issues',

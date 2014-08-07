@@ -1,9 +1,11 @@
 'use strict';
 
 var gulp = require('gulp');
-var config = require('./../../config'), docs = config.docs;
+var config = require('./../../config'), src = config.src, docs = config.docs;
 var pkg = require(process.cwd() + '/package.json');
 var path = require('path');
+var glob = require('glob');
+var _ = require('lodash');
 
 var htmlmin = require('gulp-htmlmin');
 var rename = require('gulp-rename');
@@ -24,17 +26,28 @@ var cwd = path.resolve(__dirname, '..', '..', docs.cwd);
 
 var changed = require('gulp-changed');
 gulp.task('ng-factory:views/docs(tmp)', function() {
-  d(config.locals);
+
+  var locals = _.extend({}, config.locals);
+  locals.examples = {};
+  locals.modules.forEach(function(name) {
+    locals.examples[name] = glob.sync(path.join(name, 'docs', 'examples', '*'), {cwd: src.cwd}).map(function(file) {
+      return {filename: path.join(src.cwd, file), basename: path.basename(file), extname: path.extname(file)};
+    })
+  });
+  locals.scripts = {};
+  locals.modules.forEach(function(name) {
+    locals.scripts[name] = glob.sync(path.join(name, 'docs', '{,(?:!examples)/}*.js'), {cwd: src.cwd});
+  });
 
   var views = gulp.src(docs.views, {cwd: cwd, base: cwd})
     // .pipe(changed(docs.tmp))
-    .pipe(nunjucks({locals: config.locals, strict: true}))
+    .pipe(nunjucks({locals: locals, strict: true}))
     .pipe(jade({pretty: true}))
     .pipe(gulp.dest(docs.tmp))
     .pipe(connect.reload());
 
   var index = gulp.src(docs.index, {cwd: cwd/*docs.cwd*/})
-    .pipe(nunjucks({locals: config.locals, strict: true}))
+    .pipe(nunjucks({locals: locals, strict: true}))
     .pipe(jade({pretty: true}))
     .pipe(through.obj(function(file, encoding, next) {
       // Fake path for wiredep
