@@ -1,15 +1,22 @@
 {% block title -%}
 # {{ pkg.name }}
+{%- endblock %}
 {% for badge in badges -%}
 [![{{ badge.title }}]({{ badge.image }})]({{ badge.url }}) {% endfor %}
+{% block logo -%}
 {%- endblock %}
 
 {% block header -%}
 > {{ pkg.description }}
-
 {% block description -%}
 {%- endblock %}
 {%- endblock %}
+
+## Install
+
+``` sh
+$ bower install {{ pkg.name }} --save
+```
 
 ## Examples
 {% block examples -%}

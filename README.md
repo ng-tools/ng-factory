@@ -1,9 +1,17 @@
 # bs-alert
 [![Build Status](http://img.shields.io/travis/douglasduteil/angular-utility-belt.svg)](http://travis-ci.org/douglasduteil/angular-utility-belt) [![Coverage Status](http://img.shields.io/codeclimate/coverage/github/douglasduteil/angular-utility-belt.svg)](http://url) [![Release Status](http://img.shields.io/github/release/douglasduteil/angular-utility-belt.svg)](http://github.com/douglasduteil/angular-utility-belt/releases) 
 
+<img align="right" height="300" src="http://bower.io/img/bower-logo.png">
+
 > Alerts are styled tiny dialogs that inherit the behavior of modals.
 
-AngularStrap's alerts provides easy to use growl-like notifications for your **AngularJS** application, enabling seamless integration of [Bootstrap 3.0+](https://github.com/twbs/bootstrap) into your [AngularJS 1.2+](https://github.com/angular/angular.js) app.
+AngularStrap's alerts provides easy to use growl-like notifications, enabling seamless integration of [Bootstrap 3.0+](https://github.com/twbs/bootstrap) into your [AngularJS 1.2+](https://github.com/angular/angular.js) app.
+
+## Install
+
+``` sh
+$ bower install bs-alert --save
+```
 
 ## Examples
 
