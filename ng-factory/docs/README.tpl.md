@@ -8,8 +8,14 @@
 
 ## Examples
 {% block examples -%}
-{% for example in examples -%}
-{{ example }}
+{% for module in modules -%}
+{% for example in examples[module] %}
+- **{{ module }}** - [{{ example.basename }}](//github.com/{{ url }}/{{ src.cwd }}/{{ module }}/docs/examples/{{ example.basename }})
+
+``` {{ example.extname }}
+{% include example.filename %}
+```
+{%- endfor %}
 {%- endfor %}
 {%- endblock %}
 
@@ -21,8 +27,10 @@
 ## Dependencies
 
 Package | Version
---- | ---{% for dependency, version in dependencies %}
-{{ dependency }} | **{{ version }}**{% endfor %}
+------- | -------
+{% for dependency, version in dependencies -%}
+{{ dependency }} | **{{ version }}**
+{% endfor %}
 
 ## Status
 {% for badge in badges %}
@@ -35,4 +43,4 @@ Please submit all pull requests the against master branch. If your unit test con
 
 ## License
 
-    {{ license }}
+{{ license }}

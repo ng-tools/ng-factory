@@ -51,9 +51,10 @@ exports.banner = gutil.template('/**\n' +
   ' */\n', {file: '', pkg: pkg, today: new Date().toISOString().substr(0, 10)});
 
 var glob = require('glob');
+exports.modules = glob.sync('*', {cwd: config.src.cwd});
 exports.locals = {
   pkg: pkg,
-  modules: glob.sync('*', {cwd: config.src.cwd}).map(function(name) {
-    return {name: name, scripts: glob.sync(name + '/docs/{,*/}*.js', {cwd: config.src.cwd}), views: glob.sync(name + '/docs/{,*/}*.{html,jade}', {cwd: config.src.cwd})};
-  })
+  src: exports.src,
+  docs: exports.docs,
+  modules: exports.modules
 };

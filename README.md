@@ -4,6 +4,50 @@ Alerts are styled tiny dialogs that inherit the behavior of modals.
 
 ## Examples
 
+- **alert** - [01-directive.html](//github.com/douglasduteil/angular-utility-belt/src/alert/docs/examples/01-directive.html)
+
+``` .html
+<!-- Button to trigger a default alert with a scope as an object {title:'', content:'', etc.} -->
+<button type="button" class="btn btn-lg btn-primary" data-placement="top-right" data-container="body" data-duration="3" bs-alert="alert">Click to toggle alert
+  <br />
+  <small>(using an object)</small>
+</button>
+
+<!-- You can also use data-attrs to assign scope variables -->
+<button type="button" class="btn btn-lg btn-primary" title="" data-content="" data-type="success" data-container="#alerts-container" bs-alert>Click to toggle alert
+  <br />
+  <small>(using data-attrs)</small>
+</button>
+
+<!-- You can use a custom html template with the `data-template` attr -->
+<button type="button" class="btn btn-lg btn-danger" data-template="alert/docs/alert.demo.tpl.html" data-placement="top" data-duration="3" data-animation="am-fade-and-slide-top" data-container="body" data-keyboard="true" bs-alert="alert">Custom alert
+  <br />
+  <small>(using data-template)</small>
+</button>
+
+<!-- Element container to append the first alert -->
+<hr>
+<div id="alerts-container"></div>
+
+```
+- **alert** - [02-service.js](//github.com/douglasduteil/angular-utility-belt/src/alert/docs/examples/02-service.js)
+
+``` .js
+'use strict';
+
+angular.module('mgcrea.ngStrapDocs')
+
+.controller('AlertDemoCtrl', function($scope, $alert) {
+
+  // Service usage
+  var myAlert = $alert({title: 'Holy guacamole!', content: 'Best check yo self, you\'re not looking too good.', placement: 'top', type: 'info', keyboard: true, show: false});
+  $scope.showAlert = function() {
+    myAlert.show(); // or myAlert.$promise.then(myAlert.show) if you use an external html template (async)
+  };
+
+});
+
+```
 
 ## Usage
 minimalist ngDocs API
@@ -11,12 +55,13 @@ minimalist ngDocs API
 ## Dependencies
 
 Package | Version
---- | ---
+------- | -------
 angular | **^1.3.0**
 angular-animate | **^1.3.0**
 bootstrap | **^3.2.0**
 font-awesome | **^4.1.0**
 bootstrap-additions | **~0.2.3**
+
 
 ## Status
 

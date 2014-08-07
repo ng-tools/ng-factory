@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var config = require('./../../config'), docs = config.docs;
+var config = require('./../../config'), src = config.src, docs = config.docs;
 var pkg = require(process.cwd() + '/package.json');
 var bower = require(process.cwd() + '/bower.json');
 var rename = require('gulp-rename');
@@ -9,7 +9,8 @@ var template = config.requireTransform('nunjucks');
 var fs = require('fs');
 var path = require('path');
 var through = require('through2');
-
+var glob = require('glob');
+var extend = require('lodash.assign');
 
 /*
 https://github.com/douglasduteil/angular-utility-belt/issues/1
@@ -24,6 +25,15 @@ gulp.task('ng-factory:readme/src', function() {
   Object.keys(bowerDependencies).forEach(function(key) {
     bowerDependencies[key] = bowerDependencies[key].replace('|', '&#124;');
   });
+
+  var examples = {};
+  config.modules.map(function(name) {
+    examples[name] = glob.sync(path.join(name, 'docs', 'examples', '*'), {cwd: src.cwd}).map(function(file) {
+      return {filename: path.join(src.cwd, file), basename: path.basename(file), extname: path.extname(file)};
+    })
+  });
+  d(examples);
+    // return {name: name, scripts: glob.sync(name + '/docs/{,*/}*.js', {cwd: config.src.cwd}), views: glob.sync(name + '/docs/{,*/}*.{html,jade}', {cwd: config.src.cwd})};
 
   var badges = [
     {
@@ -61,9 +71,7 @@ gulp.task('ng-factory:readme/src', function() {
     }
   ];
 
-  var locals = {
-
-    pkg: pkg,
+  var locals = extend({}, config.locals, {
 
     url: [pkg.repository.owner, pkg.repository.name].join('/'),
 
@@ -80,14 +88,14 @@ gulp.task('ng-factory:readme/src', function() {
     badges: badges,
 
     // todo : scan examples and add link (or embed)
-    examples: [],
+    examples: examples,
 
     // todo: generate ngdocs API
     ngdocs: 'minimalist ngDocs API',
 
     // add licence from package
-    license: fs.readFileSync('LICENSE').toString().replace(/(?:\r?\n)/g, '\n    ')
-  };
+    license: '    ' + fs.readFileSync('LICENSE').toString().replace(/(?:\r?\n)/g, '\n    ')
+  });
 
   /*
   // grab the intro for each example if any
