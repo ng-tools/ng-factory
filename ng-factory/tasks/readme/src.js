@@ -26,6 +26,7 @@ gulp.task('ng-factory:readme/src', function() {
     bowerDependencies[key] = bowerDependencies[key].replace('|', '&#124;');
   });
 
+
   var examples = {};
   config.modules.map(function(name) {
     examples[name] = glob.sync(path.join(name, 'docs', 'examples', '*'), {cwd: src.cwd}).map(function(file) {
@@ -37,24 +38,25 @@ gulp.task('ng-factory:readme/src', function() {
 
   var badges = [
     {
-      title: 'CodeClimate status',
-      image: 'http://img.shields.io/codeclimate/github/kabisaict/flow.svg',
+      title: 'Build Status',
+      image: 'http://img.shields.io/travis/{{ url }}.svg',
+      url: 'http://travis-ci.org/{{ url }}'
+    }, {
+      title: 'Coverage Status',
+      image: 'http://img.shields.io/codeclimate/coverage/github/{{ url }}.svg',
       url: 'http://url'
     }, {
-      title: 'CodeClimate coverage',
-      image: 'http://img.shields.io/codeclimate/coverage/github/triAGENS/ashikawa-core.svg',
-      url: 'http://url'
-    }, {
-      title: 'Travis CI',
-      image: 'http://img.shields.io/travis/joyent/node.svg',
-      url: 'http://travis-ci.org/joyent/node'
-    }, {
-      title: 'Github release',
-      image: 'http://img.shields.io/github/release/qubyte/rubidium.svg',
-      url: 'http://url'
-    }, {
+      title: 'Release Status',
+      image: 'http://img.shields.io/github/release/{{ url }}.svg',
+      url: 'http://github.com/{{ url }}/releases'
+    }
+    /*, {
       title: 'Github issues',
       image: 'http://img.shields.io/github/issues/badges/shields.svg',
+      url: 'http://url'
+    }, {
+      title: 'CodeClimate status',
+      image: 'http://img.shields.io/codeclimate/github/kabisaict/flow.svg',
       url: 'http://url'
     }, {
       title: 'NPM dependencies',
@@ -68,12 +70,20 @@ gulp.task('ng-factory:readme/src', function() {
       title: 'Browser support',
       image: 'https://ci.testling.com/substack/tape.png',
       url: 'http://ci.testling.com/substack/tape'
-    }
+    }*/
   ];
+
+  var url = [pkg.repository.owner, pkg.repository.name].join('/');
+
+  badges.forEach(function(badge) {
+    Object.keys(badge).forEach(function(key) {
+      badge[key] = badge[key].replace('{{ url }}', url);
+    });
+  });
 
   var locals = extend({}, config.locals, {
 
-    url: [pkg.repository.owner, pkg.repository.name].join('/'),
+    url: url,
 
     // todo: fancy ascii art
     logo: '# ' + pkg.name,

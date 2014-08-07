@@ -1,9 +1,14 @@
 {% block title -%}
-# {{ pkg.name }} [![Build Status](http://img.shields.io/travis/{{ url }}.svg)](http://travis-ci.org/{{ url }})
+# {{ pkg.name }}
+{% for badge in badges -%}
+[![{{ badge.title }}]({{ badge.image }})]({{ badge.url }}) {% endfor %}
 {%- endblock %}
 
 {% block header -%}
-{{ pkg.description }}
+> {{ pkg.description }}
+
+{% block description -%}
+{%- endblock %}
 {%- endblock %}
 
 ## Examples
@@ -33,9 +38,6 @@ Package | Version
 {% endfor %}
 
 ## Status
-{% for badge in badges %}
-[![{{ badge.title }}]({{ badge.image }})]({{ badge.url }})
-{% endfor %}
 
 ## Contributing
 

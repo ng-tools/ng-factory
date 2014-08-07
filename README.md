@@ -1,6 +1,9 @@
-# bs-alert [![Build Status](http://img.shields.io/travis/douglasduteil/angular-utility-belt.svg)](http://travis-ci.org/douglasduteil/angular-utility-belt)
+# bs-alert
+[![Build Status](http://img.shields.io/travis/douglasduteil/angular-utility-belt.svg)](http://travis-ci.org/douglasduteil/angular-utility-belt) [![Coverage Status](http://img.shields.io/codeclimate/coverage/github/douglasduteil/angular-utility-belt.svg)](http://url) [![Release Status](http://img.shields.io/github/release/douglasduteil/angular-utility-belt.svg)](http://github.com/douglasduteil/angular-utility-belt/releases) 
 
-Alerts are styled tiny dialogs that inherit the behavior of modals.
+> Alerts are styled tiny dialogs that inherit the behavior of modals.
+
+AngularStrap's alerts provides easy to use growl-like notifications for your **AngularJS** application, enabling seamless integration of [Bootstrap 3.0+](https://github.com/twbs/bootstrap) into your [AngularJS 1.2+](https://github.com/angular/angular.js) app.
 
 ## Examples
 
@@ -64,23 +67,6 @@ bootstrap-additions | **~0.2.3**
 
 
 ## Status
-
-[![CodeClimate status](http://img.shields.io/codeclimate/github/kabisaict/flow.svg)](http://url)
-
-[![CodeClimate coverage](http://img.shields.io/codeclimate/coverage/github/triAGENS/ashikawa-core.svg)](http://url)
-
-[![Travis CI](http://img.shields.io/travis/joyent/node.svg)](http://travis-ci.org/joyent/node)
-
-[![Github release](http://img.shields.io/github/release/qubyte/rubidium.svg)](http://url)
-
-[![Github issues](http://img.shields.io/github/issues/badges/shields.svg)](http://url)
-
-[![NPM dependencies](http://img.shields.io/david/visionmedia/express.svg)](http://url)
-
-[![NPM dev dependencies](http://img.shields.io/david/dev/visionmedia/express.svg)](http://url)
-
-[![Browser support](https://ci.testling.com/substack/tape.png)](http://ci.testling.com/substack/tape)
-
 
 ## Contributing
 
