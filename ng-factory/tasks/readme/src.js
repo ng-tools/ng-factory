@@ -46,15 +46,15 @@ gulp.task('ng-factory:readme/src', function() {
       image: 'http://img.shields.io/codeclimate/coverage/github/{{ url }}.svg',
       url: 'http://url'
     }, {
-      title: 'Release Status',
+      title: 'Github Releases',
       image: 'http://img.shields.io/github/release/{{ url }}.svg',
       url: 'http://github.com/{{ url }}/releases'
+    }, {
+      title: 'Github Issues',
+      image: 'http://img.shields.io/github/issues/{{ url }}.svg',
+      url: 'http://github.com/{{ url }}/issues'
     }
     /*, {
-      title: 'Github issues',
-      image: 'http://img.shields.io/github/issues/badges/shields.svg',
-      url: 'http://url'
-    }, {
       title: 'CodeClimate status',
       image: 'http://img.shields.io/codeclimate/github/kabisaict/flow.svg',
       url: 'http://url'

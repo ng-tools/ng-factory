@@ -44,11 +44,14 @@ Package | Version
 {{ dependency }} | **{{ version }}**
 {% endfor %}
 
-## Status
+## Browser Support
+
+[![Browser Support](https://ci.testling.com/{{ url }}.png)](http://ci.testling.com/{{ url }})
 
 ## Contributing
-
+{% block contributing -%}
 Please submit all pull requests the against master branch. If your unit test contains JavaScript patches or features, you should include relevant unit tests. Thanks!
+{%- endblock %}
 
 ## License
 

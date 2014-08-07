@@ -1,5 +1,5 @@
 # bs-alert
-[![Build Status](http://img.shields.io/travis/douglasduteil/angular-utility-belt.svg)](http://travis-ci.org/douglasduteil/angular-utility-belt) [![Coverage Status](http://img.shields.io/codeclimate/coverage/github/douglasduteil/angular-utility-belt.svg)](http://url) [![Release Status](http://img.shields.io/github/release/douglasduteil/angular-utility-belt.svg)](http://github.com/douglasduteil/angular-utility-belt/releases) 
+[![Build Status](http://img.shields.io/travis/douglasduteil/angular-utility-belt.svg)](http://travis-ci.org/douglasduteil/angular-utility-belt) [![Coverage Status](http://img.shields.io/codeclimate/coverage/github/douglasduteil/angular-utility-belt.svg)](http://url) [![Github Releases](http://img.shields.io/github/release/douglasduteil/angular-utility-belt.svg)](http://github.com/douglasduteil/angular-utility-belt/releases) [![Github Issues](http://img.shields.io/github/issues/douglasduteil/angular-utility-belt.svg)](http://github.com/douglasduteil/angular-utility-belt/issues) 
 
 <img align="right" height="300" src="http://bower.io/img/bower-logo.png">
 
@@ -74,10 +74,11 @@ font-awesome | **^4.1.0**
 bootstrap-additions | **~0.2.3**
 
 
-## Status
+## Browser Support
+
+[![Browser Support](https://ci.testling.com/douglasduteil/angular-utility-belt.png)](http://ci.testling.com/douglasduteil/angular-utility-belt)
 
 ## Contributing
-
 Please submit all pull requests the against master branch. If your unit test contains JavaScript patches or features, you should include relevant unit tests. Thanks!
 
 ## License
