@@ -1,6 +1,6 @@
 {
   "name": "bs-alert",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Alerts are styled tiny dialogs that inherit the behavior of modals.",
   "main": "Gulpfile.js",
   "scripts": {
