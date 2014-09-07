@@ -28,7 +28,7 @@ exports.src = {
 };
 
 exports.docs = {
-  cwd: 'templates/docs',
+  cwd: 'templates/gh-pages',
   dest: 'pages',
   tmp: '.tmp',
   scripts: 'scripts/**/*.js',
