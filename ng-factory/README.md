@@ -1,5 +1,13 @@
 # ng-factory
 
+## File slitting
+
+For the sake of clarity and coherence
+
+- Main ng-factoty tasks are in the **tasks folder**
+- Template files are in the **templates folder**
+- Utility transforms are in the **transforms folder**
+
 ## Tasks
 
 ### ng-factory:clean

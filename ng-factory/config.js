@@ -28,7 +28,7 @@ exports.src = {
 };
 
 exports.docs = {
-  cwd: 'docs',
+  cwd: 'templates/docs',
   dest: 'pages',
   tmp: '.tmp',
   scripts: 'scripts/**/*.js',
