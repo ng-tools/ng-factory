@@ -14,7 +14,7 @@ var docs = config.docs;
 var connect = require('gulp-connect');
 gulp.task('ng-factory:connect/docs(tmp)', function() {
   connect.server({
-    root: [path.join(cwd, docs.tmp), path.join(cwd, '.dev'), path.join(cwd, docs.cwd), path.join(cwd, src.cwd)],
+    root: [path.join(cwd, docs.tmp), path.join(cwd, docs.cwd), path.join(cwd, src.cwd)],
     port: config.ports.docs,
     livereload: true
   });

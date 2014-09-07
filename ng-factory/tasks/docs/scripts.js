@@ -23,7 +23,6 @@ gulp.task('ng-factory:scripts/docs(tmp)', function() {
     .pipe(connect.reload());
 
   var ngdocs = gulp.src(src.scripts, {cwd: src.cwd})
-    .pipe(ngdoc())
-    .pipe(debug())
+    .pipe(ngdoc());
 
 });

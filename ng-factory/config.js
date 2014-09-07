@@ -16,6 +16,10 @@ pkg.repository.name = split.pop();
 pkg.repository.owner = split.pop();
 exports.url = [pkg.repository.owner, pkg.repository.name].join('/'),
 
+
+// exports.base = 'node_modules/ng-factory';
+exports.base = 'ng-factory';
+
 exports.src = {
   cwd: 'src',
   dest: 'dist',
@@ -29,6 +33,7 @@ exports.src = {
 
 exports.docs = {
   cwd: 'templates/gh-pages',
+  readme: 'templates/readme',
   dest: 'pages',
   tmp: '.tmp',
   scripts: 'scripts/**/*.js',

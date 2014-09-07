@@ -16,19 +16,20 @@ global.dd = function() {
   util.log(stack.join('\n'));
   process.exit(1);
 };
+global.debug = require('gulp-debug');
 
 // Tasks
 //
 
-require('./tasks/connect/docs.js');
-require('./tasks/clean/docs.js');
-require('./tasks/clean/src.js');
-require('./tasks/templates/src.js');
-require('./tasks/scripts/src.js');
-require('./tasks/scripts/docs.js');
-require('./tasks/styles/src.js');
-require('./tasks/styles/docs.js');
-require('./tasks/readme/src.js');
-require('./tasks/views/docs.js');
-require('./tasks/jshint/src');
-require('./tasks/jshint/test');
+require('./tasks/docs/clean.js');
+require('./tasks/docs/connect.js');
+require('./tasks/docs/readme.js');
+require('./tasks/docs/scripts.js');
+require('./tasks/docs/styles.js');
+require('./tasks/docs/views.js');
+
+require('./tasks/src/clean.js');
+require('./tasks/src/jshint.js');
+require('./tasks/src/scripts.js');
+require('./tasks/src/styles.js');
+require('./tasks/src/templates.js');
