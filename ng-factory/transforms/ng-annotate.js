@@ -7,7 +7,7 @@ var gutil = require('gulp-util');
 var defaults = {
   debug: true,
   add: true
-}
+};
 
 module.exports = through('ng-annotate', function(file, config) {
   var result = annotate(String(file.contents), config);
