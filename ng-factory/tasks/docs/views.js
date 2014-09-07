@@ -13,6 +13,7 @@ var plumber = require('gulp-plumber');
 var mainBowerFiles = require('main-bower-files');
 var inject = require('gulp-inject');
 
+var changed = require('gulp-changed');
 var htmlmin = require('gulp-htmlmin');
 var rename = require('gulp-rename');
 var wiredep = require('wiredep').stream;
@@ -23,14 +24,13 @@ var connect = require('gulp-connect');
 var nunjucks = config.requireTransform('nunjucks');
 var jade = config.requireTransform('jade');
 
-var cwd = path.resolve(__dirname, '..', '..', docs.cwd);
+var cwd = path.join(config.dirname, docs.cwd);
 
 
 // DOCS
 //
 
-var changed = require('gulp-changed');
-gulp.task('ng-factory:views/docs(tmp)', function() {
+gulp.task('ng-factory:docs/views', function() {
 
   var locals = _.extend({}, config);
   locals.examples = {};
@@ -50,8 +50,8 @@ gulp.task('ng-factory:views/docs(tmp)', function() {
   //   .pipe(jade({pretty: true}))
   //   .pipe(gulp.dest(docs.tmp))
   //   .pipe(connect.reload());
-  d(docs.cwd, docs.index);
-  var index = gulp.src(docs.index, {cwd: docs.cwd})
+  dd(cwd, mainBowerFiles({paths: cwd}));
+  var index = gulp.src(docs.index, {cwd: cwd})
     .pipe(debug())
     .pipe(nunjucks({locals: locals, strict: true}))
     .pipe(jade({pretty: true}))
@@ -63,15 +63,15 @@ gulp.task('ng-factory:views/docs(tmp)', function() {
     //   file.base = path.dirname(file.path);
     //   next(null, file);
     // }))
-    // .pipe(wiredep({directory: path.resolve(process.cwd(), 'ng-factory', docs.cwd, 'bower_components'), exclude: [/jquery/, /js\/bootstrap/]}))
-    // .pipe(inject(gulp.src(mainBowerFiles({paths: path.join('ng-factory', docs.cwd)}), {read: false}), {name: 'bower'}))
+    // .pipe(wiredep({directory: path.resolve(cwd, 'bower_components'), exclude: [/jquery/, /js\/bootstrap/]}))
+    .pipe(inject(gulp.src(mainBowerFiles({paths: cwd}), {read: false}), {name: 'bower'}))
     .pipe(gulp.dest(docs.tmp));
 
   return merge(index);
 
 });
 
-gulp.task('ng-factory:views/docs(pages)', function() {
+gulp.task('ng-factory:pages/views', function() {
 
   var views = gulp.src(docs.views, {cwd: cwd, base: cwd})
     .pipe(changed(docs.tmp))

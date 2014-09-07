@@ -14,7 +14,7 @@ var template = config.requireTransform('nunjucks');
 // Generates a simple README for GitHub from the templates/readme/README.tpl.md
 // @url https://github.com/douglasduteil/angular-utility-belt/issues/1
 
-gulp.task('ng-factory:readme/src', function() {
+gulp.task('ng-factory:docs/readme', function() {
 
   var locals = _.extend({}, config);
 
@@ -35,7 +35,7 @@ gulp.task('ng-factory:readme/src', function() {
   });
 
   // Build readme
-  return gulp.src('README.tpl.md', {cwd: path.join(config.base, docs.readme)})
+  return gulp.src('README.tpl.md', {cwd: path.join(config.dirname, docs.readme)})
     .pipe(template({locals: locals}))
     .pipe(gulp.dest('.'));
 

@@ -13,9 +13,9 @@ var concatScripts = config.requireTransform('concat-scripts');
 var annotate = config.requireTransform('ng-annotate');
 var uglify = config.requireTransform('uglify-js');
 
-gulp.task('ng-factory:templates/src(dist)', function() {
+gulp.task('ng-factory:src/templates', function() {
 
-  // Build unified pkg.name template
+  // Build unified pkg.name compile template files
   gulp.src(src.templates, {cwd: src.cwd})
     .pipe(htmlmin({removeComments: true, collapseWhitespace: true}))
     .pipe(ngtemplate({module: pkg.name}))
@@ -30,6 +30,6 @@ gulp.task('ng-factory:templates/src(dist)', function() {
     .pipe(rename(function(path) { path.extname = '.min.js'; }))
     .pipe(uglify())
     .pipe(concat.header(config.banner))
-    .pipe(gulp.dest(src.dest))
+    .pipe(gulp.dest(src.dest));
 
 });

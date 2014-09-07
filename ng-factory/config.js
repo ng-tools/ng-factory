@@ -18,12 +18,12 @@ exports.url = [pkg.repository.owner, pkg.repository.name].join('/'),
 
 
 // exports.base = 'node_modules/ng-factory';
-exports.base = 'ng-factory';
+exports.dirname = __dirname;
 
 exports.src = {
   cwd: 'src',
   dest: 'dist',
-  tmp: '.tmp',
+  tmp: '.tmp/src',
   test: '{,*/}test{,*/}*.spec.js',
   scripts: '{,*/}*.js',
   styles: '{,*/}*.{less,css}',
@@ -35,7 +35,7 @@ exports.docs = {
   cwd: 'templates/gh-pages',
   readme: 'templates/readme',
   dest: 'pages',
-  tmp: '.tmp',
+  tmp: '.tmp/docs',
   scripts: 'scripts/**/*.js',
   styles: 'styles/*.less',
   views: 'views/**/*.jade',

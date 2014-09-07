@@ -9,20 +9,20 @@ require('./ng-factory');
 gulp.task('build', ['dist']);
 gulp.task('serve', ['docs']);
 
-// gulp.task('docs', function() {
-//   run(
-//     'ng-factory:clean/docs(tmp)',
-//     ['ng-factory:views/docs(tmp)', 'ng-factory:scripts/docs(tmp)', 'ng-factory:styles/docs(tmp)', 'ng-factory:connect/docs(tmp)'],
-//     ['ng-factory:watch/docs'/*, 'ng-factory:open/docs'*/]
-//   );
-// });
-
 gulp.task('readme', function() {
-  run('ng-factory:readme/src');
+  run('ng-factory:docs/readme');
 });
 
 gulp.task('dist', function() {
-  run('ng-factory:readme/src', 'ng-factory:clean/src(dist)', ['ng-factory:templates/src(dist)', 'ng-factory:styles/src(dist)~less', 'ng-factory:scripts/src(dist)']);
+  run('ng-factory:src/clean', ['ng-factory:src/templates', 'ng-factory:src/styles', 'ng-factory:src/scripts']);
+});
+
+gulp.task('docs', function() {
+  run(
+    'ng-factory:docs/clean',
+    ['ng-factory:docs/views', 'ng-factory:docs/scripts', 'ng-factory:docs/styles', 'ng-factory:docs/connect'],
+    ['ng-factory:docs/watch', 'ng-factory:docs/open']
+  );
 });
 
 gulp.task('pages', function() {
