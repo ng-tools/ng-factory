@@ -49,7 +49,7 @@ Package | Version
 ------- | -------
 {% for dependency, version in dependencies -%}
 {{ dependency }} | **{{ version }}**
-{%- endfor %}
+{% endfor %}
 
 ## Browser Support
 
