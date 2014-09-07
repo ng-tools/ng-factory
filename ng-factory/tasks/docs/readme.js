@@ -26,6 +26,8 @@ gulp.task('ng-factory:docs/readme', function() {
     return value.replace('|', '&#124;');
   });
 
+  d(config.ngdocs);
+
   // Fetch examples
   locals.examples = {};
   config.modules.map(function(name) {

@@ -62,17 +62,21 @@ angular.module('mgcrea.ngStrapDocs')
 
 ## Usage
 
+Param | Type | Details
+----- | ---- | -------
+animation _(optional)_ |  `string` | Class to be added for animation purposes
+  Defaults value is `'am-fade'`.
+prefixClass _(optional)_ |  `string` | Prefix prepended to class names and events
+  Defaults value is `'alert'`.
+placement _(optional)_ |  `string` | How to position the alert
+  Defaults value is `''`.
+
 
 ## Dependencies
 
 Package | Version
 ------- | -------
-angular | **^1.3.0**
-angular-animate | **^1.3.0**
-bootstrap | **^3.2.0**
-font-awesome | **^4.1.0**
-bootstrap-additions | **~0.2.3**
-
+angular | **^1.3.0**angular-animate | **^1.3.0**bootstrap | **^3.2.0**font-awesome | **^4.1.0**bootstrap-additions | **~0.2.3**
 
 ## Browser Support
 

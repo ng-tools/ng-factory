@@ -10,7 +10,7 @@ gulp.task('build', ['dist']);
 gulp.task('serve', ['docs']);
 
 gulp.task('readme', function() {
-  run('ng-factory:docs/readme');
+  run('ng-factory:docs/ngdocs', 'ng-factory:docs/readme');
 });
 
 gulp.task('dist', function() {

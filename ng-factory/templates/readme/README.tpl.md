@@ -32,8 +32,15 @@ $ bower install {{ pkg.name }} --save
 {%- endblock %}
 
 ## Usage
+
 {% block usage -%}
-{{ ngdocs }}
+Param | Type | Details
+----- | ---- | -------
+{% for ngdoc in ngdocs -%}
+{% for prop in ngdoc.properties -%}
+{{ prop.name.name }} _(optional)_ |  `{{ prop.type.typeExpression }}` | {{ prop.description }}
+{% endfor %}
+{%- endfor %}
 {%- endblock %}
 
 ## Dependencies
@@ -42,7 +49,7 @@ Package | Version
 ------- | -------
 {% for dependency, version in dependencies -%}
 {{ dependency }} | **{{ version }}**
-{% endfor %}
+{%- endfor %}
 
 ## Browser Support
 
