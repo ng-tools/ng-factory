@@ -20,8 +20,8 @@ gulp.task('dist', function() {
 gulp.task('docs', function() {
   run(
     'ng-factory:docs/clean',
-    ['ng-factory:docs/views', 'ng-factory:docs/scripts', 'ng-factory:docs/styles', 'ng-factory:docs/connect'],
-    ['ng-factory:docs/watch', 'ng-factory:docs/open']
+    ['ng-factory:docs/views', 'ng-factory:docs/scripts', 'ng-factory:docs/styles', 'ng-factory:docs/connect']
+    // ['ng-factory:docs/watch', 'ng-factory:docs/open']
   );
 });
 

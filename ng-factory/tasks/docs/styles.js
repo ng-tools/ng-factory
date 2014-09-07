@@ -12,7 +12,8 @@ var less = config.requireTransform('less');
 var cleancss = config.requireTransform('clean-css');
 var prefix = require('gulp-autoprefixer');
 
-var cwd = path.join(config.dirname, docs.cwd);
+// Local (ngFactory) cwd
+var cwd = path.join(config.dirname, docs.templates);
 
 gulp.task('ng-factory:docs/styles', function() {
 

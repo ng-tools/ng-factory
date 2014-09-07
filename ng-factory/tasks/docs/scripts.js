@@ -9,7 +9,8 @@ var changed = require('gulp-changed');
 var connect = require('gulp-connect');
 var nunjucks = config.requireTransform('nunjucks');
 
-var cwd = path.join(config.dirname, docs.cwd);
+// Local (ngFactory) cwd
+var cwd = path.join(config.dirname, docs.templates);
 
 gulp.task('ng-factory:docs/scripts', function() {
 

@@ -5,7 +5,8 @@ var config = require('./../../config'), src = config.src, docs = config.docs;
 var pkg = require(process.cwd() + '/package.json');
 var path = require('path');
 
-var cwd = path.join(config.dirname, docs.cwd);
+// Local (ngFactory) cwd
+var cwd = path.join(config.dirname, docs.templates);
 
 // CONNECT
 //
@@ -13,14 +14,14 @@ var cwd = path.join(config.dirname, docs.cwd);
 var connect = require('gulp-connect');
 gulp.task('ng-factory:docs/connect', function() {
   connect.server({
-    root: [path.join(cwd, docs.tmp), path.join(cwd, docs.cwd), path.join(cwd, src.cwd)],
+    root: [path.join(config.cwd, docs.tmp), path.join(config.cwd, docs.cwd), path.join(config.cwd, src.cwd)],
     port: config.ports.docs,
     livereload: true
   });
 });
 gulp.task('ng-factory:docs/connect(pages)', function() {
   connect.server({
-    root: [path.join(cwd, docs.dest)],
+    root: [path.join(config.cwd, docs.dest)],
     port: config.ports.pages,
   });
 });
@@ -30,12 +31,16 @@ gulp.task('ng-factory:docs/connect(pages)', function() {
 //
 
 var watch = require('gulp-watch');
-var merge = require('merge-stream');
 gulp.task('ng-factory:docs/watch', function() {
-  var scripts = watch({glob: [path.join(docs.cwd, docs.scripts)]}, ['ng-factory:scripts/docs(tmp)']);
-  var styles = watch({glob: [path.join(docs.cwd, 'styles/**/*.less')]}, ['ng-factory:styles/docs(tmp)']);
-  var views = watch({glob: [path.join(config.base, docs.views)]}, ['ng-factory:views/docs(tmp)']);
-  return merge(scripts, styles, views);
+  watch(docs.scripts, {cwd: cwd}, function(files) {
+    return gulp.start('ng-factory:docs/scripts');
+  });
+  watch(docs.watchedStyles, {cwd: cwd}, function(files) {
+    return gulp.start('ng-factory:docs/styles');
+  });
+  watch([docs.index, docs.views], {cwd: cwd}, function(files) {
+    return gulp.start('ng-factory:docs/views');
+  });
 });
 
 

@@ -19,6 +19,7 @@ exports.url = [pkg.repository.owner, pkg.repository.name].join('/'),
 
 // exports.base = 'node_modules/ng-factory';
 exports.dirname = __dirname;
+exports.cwd = process.cwd();
 
 exports.src = {
   cwd: 'src',
@@ -32,12 +33,14 @@ exports.src = {
 };
 
 exports.docs = {
-  cwd: 'templates/gh-pages',
+  cwd: 'docs',
+  templates: 'templates/gh-pages',
   readme: 'templates/readme',
   dest: 'pages',
   tmp: '.tmp/docs',
   scripts: 'scripts/**/*.js',
   styles: 'styles/*.less',
+  watchedStyles: 'styles/**/*.less',
   views: 'views/**/*.jade',
   images: 'images/{,*/}*.{jpg,png,svg}',
   index: 'index{,.tpl}.jade'

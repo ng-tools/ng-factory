@@ -35,7 +35,7 @@ gulp.task('ng-factory:docs/readme', function() {
   });
 
   // Build readme from user-defined template that extends ng-factory's one
-  return gulp.src('README.tpl.md', {cwd: process.cwd})
+  return gulp.src('README.tpl.md', {cwd: docs.cwd})
     .pipe(template({locals: locals}))
     .pipe(gulp.dest('.'));
 
