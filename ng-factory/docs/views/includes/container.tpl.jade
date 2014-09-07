@@ -4,7 +4,7 @@
 
     {% block header -%}
     .page-header
-      h1#module-{{ module }}-title {{ module | title }} #[a.small(href="//github.com/mgcrea/angular-strap/blob/master/src/alert/alert.js")] {{ module }}.js
+      h1#module-{{ module }}-title {{ module | title }} #[a.small(href="//github.com/mgcrea/angular-strap/blob/master/src/alert/alert.js") {{ module }}.js]
       code {{ pkg.repository.owner }}.{{ module }}
 
     p {{ pkg.description }}

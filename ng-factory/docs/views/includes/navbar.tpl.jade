@@ -6,4 +6,9 @@
       ul.nav.navbar-nav
         li(data-match-route="^/docs"): a(href="#/docs") Docs
       ul.nav.navbar-nav.navbar-right
-        li: a(ng-click="logout()") #[i.fa.fa-unlock] Logout
+        {% for badge in badges -%}
+        {% if badge.navbar -%}
+        li: a(href="{{ badge.url }}", target="_blank") #[img(title="{{ badge.title }}", src="{{ badge.image }}")]
+        {%- endif %}
+        {% endfor %}
+        li: a(href="//github.com/{{ url }}", target="_blank") #[i.fa.fa-github] GitHub
