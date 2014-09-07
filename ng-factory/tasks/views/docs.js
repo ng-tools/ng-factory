@@ -27,7 +27,7 @@ var cwd = path.resolve(__dirname, '..', '..', docs.cwd);
 var changed = require('gulp-changed');
 gulp.task('ng-factory:views/docs(tmp)', function() {
 
-  var locals = _.extend({}, config.locals);
+  var locals = _.extend({}, config);
   locals.examples = {};
   locals.modules.forEach(function(name) {
     locals.examples[name] = glob.sync(path.join(name, 'docs', 'examples', '*'), {cwd: src.cwd}).map(function(file) {
