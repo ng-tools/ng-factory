@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var run = require('run-sequence');
+var seqTask = require('./ng-factory/sequenceGulpTask');
 
 // Load ngFactory tasks
 require('./ng-factory');
@@ -9,21 +9,46 @@ require('./ng-factory');
 gulp.task('build', ['dist']);
 gulp.task('serve', ['docs']);
 
-gulp.task('docs', function() {
-  run('ng-factory:clean/docs(tmp)', ['ng-factory:views/docs(tmp)', 'ng-factory:scripts/docs(tmp)', 'ng-factory:styles/docs(tmp)', 'ng-factory:connect/docs(tmp)'], ['ng-factory:watch/docs'/*, 'ng-factory:open/docs'*/]);
-});
+seqTask('docs', [
+  'ng-factory:clean/docs(tmp)',
+  [
+    'ng-factory:views/docs(tmp)',
+    'ng-factory:scripts/docs(tmp)',
+    'ng-factory:styles/docs(tmp)',
+    'ng-factory:connect/docs(tmp)'
+  ],
+  [
+    'ng-factory:watch/docs'
+    //, 'ng-factory:open/docs'
+  ]
+]);
 
-gulp.task('dist', function() {
-  run('ng-factory:readme/src', 'ng-factory:clean/src(dist)', ['ng-factory:templates/src(dist)', 'ng-factory:styles/src(dist)~less', 'ng-factory:scripts/src(dist)']);
-});
+seqTask('dist', [
+  'ng-factory:readme/src',
+  'ng-factory:clean/src(dist)',
+  [
+    'ng-factory:templates/src(dist)',
+    'ng-factory:styles/src(dist)~less',
+    'ng-factory:scripts/src(dist)'
+  ]
+]);
 
-gulp.task('pages', function() {
-  run('ng-factory:clean/docs(pages)', ['ng-factory:views/docs(pages)', 'connect:src'], ['open:src', 'watch:src']);
-});
+seqTask('pages', [
+  'ng-factory:clean/docs(pages)',
+  [
+    'ng-factory:views/docs(pages)',
+    'connect:src'
+  ],
+  [
+    'open:src',
+    'watch:src'
+  ]
+]);
 
-gulp.task('lint', function() {
-  return run(['ng-factory:jshint(src)', 'ng-factory:jshint(test)']);
-});
+seqTask('lint', [
+  'ng-factory:jshint(src)',
+  'ng-factory:jshint(test)'
+]);
 
 // var runSequence = require('run-sequence');
 // gulp.task('default', ['dist']);
