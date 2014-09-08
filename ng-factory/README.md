@@ -10,19 +10,23 @@ For the sake of clarity and coherence
 
 ## Tasks
 
-### ng-factory:clean
 
-### ng-factory:connect
+Task name example : `ng-factory:src/jshint`.
+- `ng-factory` is the namespace
+- `src/jshint` the targeted task
 
-### ng-factory:readme
+### ng-factory:src
 
-### ng-factory:scripts
+#### ng-factory:src/jshint
 
-### ng-factory:styles
+Jshint the sources
 
-### ng-factory:templates
 
-### ng-factory:views
+### ng-factory:test
+
+#### ng-factory:test/jshint
+
+Jshint the tests
 
 
 
