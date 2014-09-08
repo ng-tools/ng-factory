@@ -29,8 +29,11 @@ gulp.task('pages', function() {
   run('ng-factory:clean/docs(pages)', ['ng-factory:views/docs(pages)', 'connect:src'], ['open:src', 'watch:src']);
 });
 
-gulp.task('lint', function() {
-  return run(['ng-factory:jshint(src)', 'ng-factory:jshint(test)']);
+gulp.task('lint', function (cb) {
+  run([
+    'ng-factory:src/jshint',
+    'ng-factory:test/jshint'
+  ], cb);
 });
 
 // var runSequence = require('run-sequence');
