@@ -38,7 +38,7 @@ Param | Type | Details
 ----- | ---- | -------
 {% for ngdoc in ngdocs -%}
 {% for prop in ngdoc.properties -%}
-{{ prop.name.name }} _(optional)_ |  `{{ prop.type.typeExpression }}` | {{ prop.description.replace('\n ', ' -') }}
+{{ prop.name.name }} _(optional)_ |  `{{ prop.type.typeExpression }}` | {{ prop.description.replace('\n ', '<br>') }}
 {% endfor %}
 {%- endfor %}
 {%- endblock %}
