@@ -34,3 +34,5 @@ require('./tasks/src/jshint.js');
 require('./tasks/src/scripts.js');
 require('./tasks/src/styles.js');
 require('./tasks/src/templates.js');
+
+require('./tasks/test/jshint.js');
