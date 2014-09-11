@@ -5,7 +5,7 @@ var run = require('run-sequence');
 
 // Load ngFactory tasks
 require('./ng-factory');
-
+gulp.task('default', ['lint', 'karma']);  
 gulp.task('build', ['dist']);
 gulp.task('serve', ['docs']);
 
