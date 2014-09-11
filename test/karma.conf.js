@@ -16,17 +16,10 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'bower_components/angular/angular.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/jquery/dist/jquery.js',
       'src/{,*/}*.js',
-      'test/.tmp/templates/{,*/}*.js',
-      'test/effroi.js',
-      'test/helpers.js',
-      'test/async.js',
-      // 'test/mock/**/*.js',
-      // 'test/spec/**/*.js',
+      '.tmp/src/{,*/}/*.tpl.js',
       'src/{,*/}/test/*.spec.js'
     ],
 
@@ -36,7 +29,7 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress'],
 
     // web server port
     port: 8080,
@@ -56,29 +49,16 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
     singleRun: false,
 
-    preprocessors: {
-      'src/{,*/}*.js': 'coverage'
-    },
-
     plugins: [
       'karma-jasmine',
-      'karma-phantomjs-launcher',
-      'karma-coverage'
-    ],
-
-    // Coverage reporter generates the coverage
-    coverageReporter: {
-      reporters:[
-        {type: 'lcov', dir:'test/coverage/'},
-        {type: 'text-summary', dir:'test/coverage/'}
-      ]
-    }
+      'karma-phantomjs-launcher'
+    ]
 
   });
 

@@ -36,6 +36,22 @@ gulp.task('lint', function (cb) {
   ], cb);
 });
 
+gulp.task('karma', function(cb){
+  run(
+    'ng-factory:src/clean',
+    'ng-factory:src/templates:to(src.tmp)',
+    'ng-factory:src/karma',
+    cb);
+});
+
+gulp.task('coverage', function (cb) {
+  run(
+    'ng-factory:src/clean',
+    'ng-factory:src/templates:to(src.tmp)',
+    'ng-factory:src/karma:with(coverage)',
+    cb);
+});
+
 // var runSequence = require('run-sequence');
 // gulp.task('default', ['dist']);
 // gulp.task('build', ['dist']);
