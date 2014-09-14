@@ -1,7 +1,17 @@
 'use strict';
 
+/**
+ * @namespace bar.jumbotron
+ */
+
 angular.module('bar.jumbotron', [])
-  .constant('barJumbotronConfig', {
+  .constant('barJumbotronConfig',
+  /**
+   * @ngdoc constant
+   * @memberOf bar.jumbotron
+   * @name barJumbotronConfig
+   */
+  {
     class: 'jumbotron--bar',
     title: 'Hello World',
     templateUrl: 'jumbotron/jumbotron.tpl.html'
@@ -11,12 +21,28 @@ angular.module('bar.jumbotron', [])
 
 /**
  * @ngInject
+ *
+ * @param {barJumbotronConfig} barJumbotronConfig
  */
 function barJumbotronDirective(barJumbotronConfig) {
 
-  var ATTR_OPTIONS_TO_COPY = ['title'];
+  var ATTR_OPTIONS_TO_COPY = ['title', 'class'];
   var ATTR_PREFIX = 'barJumbotron';
 
+
+  /**
+   * @ngdoc directive
+   * @memberOf bar.jumbotron
+   * @name jumbotronDirective
+   * @restrict A
+   *
+   * @description
+   * The jumbotron directive. Have a sweet header.
+   *
+   * @param {string} [title='Hello World'] - The jumbotron title.
+   * @param {string} [class='jumbotron--bar'] - The jumbotron additional class.
+   *
+   */
   return {
     restrict: 'A',
     templateUrl: barJumbotronConfig.templateUrl,
@@ -24,7 +50,7 @@ function barJumbotronDirective(barJumbotronConfig) {
     link: function postLink(scope, element, attr) {
 
       var options = {};
-      angular.forEach(ATTR_OPTIONS_TO_COPY, function(key) {
+      angular.forEach(ATTR_OPTIONS_TO_COPY, function (key) {
         var prefixedKey = ATTR_PREFIX + key[0].toUpperCase() + key.substr(1);
         if (angular.isDefined(attr[prefixedKey])) options[key] = attr[prefixedKey];
       });
