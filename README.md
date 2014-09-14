@@ -1,21 +1,23 @@
-# bs-alert
+# bar.jumbotron
 [![Build Status](http://img.shields.io/travis/douglasduteil/angular-utility-belt.svg)](http://travis-ci.org/douglasduteil/angular-utility-belt) [![Coverage Status](http://img.shields.io/codeclimate/coverage/github/douglasduteil/angular-utility-belt.svg)](http://url) [![Github Releases](http://img.shields.io/badge/release-v0.1.0-orange.svg)](http://github.com/douglasduteil/angular-utility-belt/releases) [![Github Issues](http://img.shields.io/github/issues/douglasduteil/angular-utility-belt.svg)](http://github.com/douglasduteil/angular-utility-belt/issues) 
 
-<img align="right" height="200" src="http://bower.io/img/bower-logo.png">
+<img align="right" height="200" src="http://icons.iconarchive.com/icons/igh0zt/ios7-style-metro-ui/512/MetroUI-Apps-Foobar-icon.png">
 
-> Alerts are styled tiny dialogs that inherit the behavior of modals.
+> Jumbotron are styled web site header.
 
-AngularStrap's alerts provides easy to use growl-like notifications, enabling seamless integration of [Bootstrap 3.0+](https://github.com/twbs/bootstrap) into your [AngularJS 1.2+](https://github.com/angular/angular.js) app.
+Bar's jumbotron  showcase key content on your site seamless integration of [Bootstrap 3.0+](https://github.com/twbs/bootstrap) into your [AngularJS 1.2+](https://github.com/angular/angular.js) app.
+
+<br/>
 
 ## Install
 
 ``` sh
-$ bower install bs-alert --save
+$ bower install bar.jumbotron --save
 ```
 
 ## Examples
 
-- **alert** - [01-directive.html](src/alert/docs/examples/01-directive.html)
+- **jumbotron** - [01-directive.html](src/jumbotron/docs/examples/01-directive.html)
 
 ``` .html
 <!-- Button to trigger a default alert with a scope as an object {title:'', content:'', etc.} -->
@@ -41,7 +43,7 @@ $ bower install bs-alert --save
 <div id="alerts-container"></div>
 
 ```
-- **alert** - [02-service.js](src/alert/docs/examples/02-service.js)
+- **jumbotron** - [02-service.js](src/jumbotron/docs/examples/02-service.js)
 
 ``` .js
 'use strict';
@@ -69,7 +71,7 @@ angular.module('mgcrea.ngStrapDocs')
 
 
 
-### object
+### directive
 
 
 
@@ -78,18 +80,19 @@ angular.module('mgcrea.ngStrapDocs')
 
 
 
-#### $alertProvider#defaults
+#### jumbotronDirective
 
 
-  Object containing default values for all {@link mgcrea.ngStrap.alert $alert} objects.
-
-
-
+The jumbotron directive. Have a sweet header.
 
 
 
 
-##### Properties
+
+
+
+
+##### Arguments
 
 
 <table>
@@ -105,7 +108,7 @@ angular.module('mgcrea.ngStrapDocs')
 
 <tr>
   <td>
-    animation   
+    title  <em>(optional)</em>
   </td>
   <td>
     
@@ -113,15 +116,15 @@ angular.module('mgcrea.ngStrapDocs')
     
   </td>
   <td>
-    <p>Class to be added for animation purposes
-  Defaults value is <code>&#39;am-fade&#39;</code>.</p>
+    <p>The jumbotron title.</p>
 
+    Defaults : <code>'Hello World'</code>
   </td>
 </tr>
 
 <tr>
   <td>
-    prefixClass   
+    class  <em>(optional)</em>
   </td>
   <td>
     
@@ -129,25 +132,9 @@ angular.module('mgcrea.ngStrapDocs')
     
   </td>
   <td>
-    <p>Prefix prepended to class names and events
-  Defaults value is <code>&#39;alert&#39;</code>.</p>
+    <p>The jumbotron additional class.</p>
 
-  </td>
-</tr>
-
-<tr>
-  <td>
-    placement   
-  </td>
-  <td>
-    
-    <code>string</code>
-    
-  </td>
-  <td>
-    <p>How to position the alert
-  Defaults value is <code>&#39;&#39;</code>.</p>
-
+    Defaults : <code>'jumbotron--bar'</code>
   </td>
 </tr>
 
@@ -166,11 +153,8 @@ angular.module('mgcrea.ngStrapDocs')
 
 Package | Version
 ------- | -------
-angular | **^1.3.0**
-angular-animate | **^1.3.0**
-bootstrap | **^3.2.0**
-font-awesome | **^4.1.0**
-bootstrap-additions | **~0.2.3**
+angular-mocks | **^1**
+jquery | **^2**
 
 
 ## Browser Support
