@@ -22,7 +22,7 @@ gulp.task('ng-factory:docs/readme', function() {
   locals.license = '    ' + fs.readFileSync('LICENSE').toString().replace(/(?:\r?\n)/g, '\n    ');
 
   // Fetch dependencies
-  locals.dependencies = _.mapValues(bower.devDependencies, function(value) {
+  locals.dependencies = _.mapValues(bower.dependencies, function(value) {
     return value.replace('|', '&#124;');
   });
 
