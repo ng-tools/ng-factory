@@ -1,7 +1,7 @@
 {
-  "name": "bs-alert",
+  "name": "bar.jumbotron",
   "version": "0.1.0",
-  "description": "Alerts are styled tiny dialogs that inherit the behavior of modals.",
+  "description": "Jumbotron are styled web site header.",
   "main": "Gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
