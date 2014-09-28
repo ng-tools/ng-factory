@@ -55,6 +55,7 @@
     "lodash.assign": "^2",
     "lodash.template": "^2.4.1",
     "ng-annotate": "^0.9.11",
+    "ngdoc-formatter": "0.0.3",
     "nunjucks": "^1.0.7",
     "run-sequence": "^0.3.6",
     "through2": "^0.6.1",

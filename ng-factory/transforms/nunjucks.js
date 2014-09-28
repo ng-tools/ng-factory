@@ -8,12 +8,15 @@ var defaults = {
   strict: false,
   rename: true,
   debug: true
-}
+};
 
 var regex = /\.tpl(\..+)$/;
 
 module.exports = through('nunjucks', function(file, config) {
   if(config.strict && !path.basename(file.path).match(regex)) return;
+
+  nunjucks.configure(process.cwd());
+
   var result = nunjucks.renderString(String(file.contents), config.locals);
   file.contents = new Buffer(result);
   if(config.rename) {

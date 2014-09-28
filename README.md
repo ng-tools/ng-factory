@@ -62,11 +62,104 @@ angular.module('mgcrea.ngStrapDocs')
 
 ## Usage
 
-Param | Type | Details
------ | ---- | -------
-animation _(optional)_ |  `string` | Class to be added for animation purposes - Defaults value is `'am-fade'`.
-prefixClass _(optional)_ |  `string` | Prefix prepended to class names and events - Defaults value is `'alert'`.
-placement _(optional)_ |  `string` | How to position the alert - Defaults value is `''`.
+
+
+
+
+
+
+
+### object
+
+
+
+
+
+
+
+
+#### $alertProvider#defaults
+
+
+  Object containing default values for all {@link mgcrea.ngStrap.alert $alert} objects.
+
+
+
+
+
+
+
+##### Properties
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+<tr>
+  <td>
+    animation   
+  </td>
+  <td>
+    
+    <code>string</code>
+    
+  </td>
+  <td>
+    <p>Class to be added for animation purposes
+  Defaults value is <code>&#39;am-fade&#39;</code>.</p>
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+    prefixClass   
+  </td>
+  <td>
+    
+    <code>string</code>
+    
+  </td>
+  <td>
+    <p>Prefix prepended to class names and events
+  Defaults value is <code>&#39;alert&#39;</code>.</p>
+
+  </td>
+</tr>
+
+<tr>
+  <td>
+    placement   
+  </td>
+  <td>
+    
+    <code>string</code>
+    
+  </td>
+  <td>
+    <p>How to position the alert
+  Defaults value is <code>&#39;&#39;</code>.</p>
+
+  </td>
+</tr>
+
+
+
+  </tbody>
+</table>
+
+
+
+
+
 
 
 ## Dependencies
