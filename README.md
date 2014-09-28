@@ -146,6 +146,96 @@ The jumbotron directive. Have a sweet header.
 
 
 
+### object
+
+
+
+
+
+
+
+
+#### barJumbotronConfig
+
+
+
+
+
+
+
+
+
+
+##### Properties
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Param</th>
+      <th>Type</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+<tr>
+  <td>
+    class  
+  </td>
+  <td>
+    
+    <code>string</code>
+    
+  </td>
+  <td>
+    <p>the class name</p>
+
+    
+  </td>
+</tr>
+
+<tr>
+  <td>
+    title  
+  </td>
+  <td>
+    
+    <code>string</code>
+    
+  </td>
+  <td>
+    <p>the title</p>
+
+    
+  </td>
+</tr>
+
+<tr>
+  <td>
+    templateUrl  
+  </td>
+  <td>
+    
+    <code>string</code>
+    
+  </td>
+  <td>
+    <p>the used template URL</p>
+
+    
+  </td>
+</tr>
+
+
+
+  </tbody>
+</table>
+
+
+
+
 
 
 

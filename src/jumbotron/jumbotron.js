@@ -7,9 +7,13 @@
 angular.module('bar.jumbotron', [])
   .constant('barJumbotronConfig',
   /**
-   * @ngdoc constant
+   * @ngdoc object
    * @memberOf bar.jumbotron
    * @name barJumbotronConfig
+   *
+   * @property {string} class - the class name
+   * @property {string} title - the title
+   * @property {string} templateUrl - the used template URL
    */
   {
     class: 'jumbotron--bar',
