@@ -235,8 +235,7 @@ The jumbotron directive. Have a sweet header.
 
 Package | Version
 ------- | -------
-angular-mocks | **^1**
-jquery | **^2**
+angular | **^1**
 
 
 ## Browser Support
