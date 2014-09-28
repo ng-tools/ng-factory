@@ -20,45 +20,37 @@ $ bower install bar.jumbotron --save
 - **jumbotron** - [01-directive.html](src/jumbotron/docs/examples/01-directive.html)
 
 ``` .html
-<!-- Button to trigger a default alert with a scope as an object {title:'', content:'', etc.} -->
-<button type="button" class="btn btn-lg btn-primary" data-placement="top-right" data-container="body" data-duration="3" bs-alert="alert">Click to toggle alert
-  <br />
-  <small>(using an object)</small>
-</button>
+<!-- Default 'Hello World' jumbotron -->
+<div
+  data-bar-jumbotron
+  ></div>
 
-<!-- You can also use data-attrs to assign scope variables -->
-<button type="button" class="btn btn-lg btn-primary" title="" data-content="" data-type="success" data-container="#alerts-container" bs-alert>Click to toggle alert
-  <br />
-  <small>(using data-attrs)</small>
-</button>
 
-<!-- You can use a custom html template with the `data-template` attr -->
-<button type="button" class="btn btn-lg btn-danger" data-template="alert/docs/alert.demo.tpl.html" data-placement="top" data-duration="3" data-animation="am-fade-and-slide-top" data-container="body" data-keyboard="true" bs-alert="alert">Custom alert
-  <br />
-  <small>(using data-template)</small>
-</button>
+<!-- You can also use data-bar-jumbotron-title to change the title -->
+<div
+  data-bar-jumbotron
+  data-bar-jumbotron-title="S'Up !"
+  ></div>
 
-<!-- Element container to append the first alert -->
-<hr>
-<div id="alerts-container"></div>
+
+<!-- or the inner class -->
+<div
+  data-bar-jumbotron
+  data-bar-jumbotron-class="jumbotron--baaaar"
+  ></div>
+
 
 ```
-- **jumbotron** - [02-service.js](src/jumbotron/docs/examples/02-service.js)
+- **jumbotron** - [02-config.js](src/jumbotron/docs/examples/02-config.js)
 
 ``` .js
 'use strict';
 
-angular.module('mgcrea.ngStrapDocs')
+angular.module('foo.example')
 
-.controller('AlertDemoCtrl', function($scope, $alert) {
-
-  // Service usage
-  var myAlert = $alert({title: 'Holy guacamole!', content: 'Best check yo self, you\'re not looking too good.', placement: 'top', type: 'info', keyboard: true, show: false});
-  $scope.showAlert = function() {
-    myAlert.show(); // or myAlert.$promise.then(myAlert.show) if you use an external html template (async)
-  };
-
-});
+  .config(function (barJumbotronConfig) {
+    barJumbotronConfig.class = 'jumbotron--baaaar';
+  });
 
 ```
 
