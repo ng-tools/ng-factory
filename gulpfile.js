@@ -5,12 +5,15 @@ var run = require('run-sequence');
 
 // Load ngFactory tasks
 require('./ng-factory');
-gulp.task('default', ['lint', 'karma']);  
+gulp.task('default', ['lint', 'karma']);
 gulp.task('build', ['dist']);
 gulp.task('serve', ['docs']);
 
-gulp.task('readme', function() {
-  run('ng-factory:docs/ngdocs', 'ng-factory:docs/readme');
+gulp.task('readme', function(cb) {
+  run(
+    'ng-factory:docs/ngdocs',
+    'ng-factory:docs/readme',
+    cb);
 });
 
 gulp.task('dist', function() {

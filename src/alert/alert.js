@@ -9,7 +9,7 @@ angular.module('mgcrea.ngStrap.alert', ['mgcrea.ngStrap.modal'])
   .provider('$alert', function() {
 
   /**
-   * @ngdoc property
+   * @ngdoc object
    * @name $alertProvider#defaults
    * @description
    *   Object containing default values for all {@link mgcrea.ngStrap.alert $alert} objects.
