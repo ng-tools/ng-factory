@@ -9,7 +9,10 @@ var fs = require('fs');
 var glob = require('glob');
 var path = require('path');
 
+var through = require('through2');
+
 var template = config.requireTransform('nunjucks');
+var markdown = config.requireTransform('markdown');
 
 // Generates a simple README for GitHub from the templates/readme/README.tpl.md
 // @url https://github.com/douglasduteil/angular-utility-belt/issues/1
@@ -40,3 +43,15 @@ gulp.task('ng-factory:docs/readme', function() {
     .pipe(gulp.dest('.'));
 
 });
+
+
+gulp.task('ng-factory:docs/readme:cacheGettingStarted', function(){
+  return gulp.src('getting-started.md', {cwd: docs.cwd})
+    .pipe(markdown())
+    .pipe(through.obj(function (file, enc, callback) {
+      config.gettingStarted = file.contents.toString();
+      callback(null, file);
+    }));
+});
+
+

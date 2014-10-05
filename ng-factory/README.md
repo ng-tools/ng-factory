@@ -51,3 +51,39 @@ Bypass gulp plugins directly using the official node lib to to the work.
 ### template
 
 ### uglify-js
+
+
+## Pages customization
+
+The pages are highly customizable. The pages templating is provided by (Nunjucks)[mozilla.github.io/nunjucks/].
+
+We integrate a default page with the factory but you can change everything if you please.
+
+The basic pages generation workflow is **copy every thing to the `.tmp/docs` folder and generate what you need to output in the `pages` folder**.
+
+### Default template
+
+`ng-factory/templates/pages/index.nunjucks.html` is the default template file.
+
+> [...] More documentation here [...]
+
+
+### Views Blocks
+
+By extending the `{% extends "views/base.nunjucks.html" %}` default template you can customize different blocks.
+**Note: you can use `{{ super() }}` to render parent blocks**
+
+- **ng-factory/templates/pages/views/base.nunjucks.html**
+  - **head** for the `<head>` content
+  - **body** for the `<body>` content
+  - **foot** fot the "`<foot>`" content (what comes after the content into the body)
+  
+### Includes Blocks 
+
+- **ng-factory/templates/pages/views/includes/head.nunjucks.html**
+  - **headLinks** for the css scripts at the end of the `<head>` tag
+
+- **ng-factory/templates/pages/views/includes/foot.nunjucks.html**
+  - **footScripts** for the js scripts at the end of the `<body>` tag
+  
+> [...] More documentation here [...]

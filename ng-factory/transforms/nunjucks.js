@@ -10,16 +10,16 @@ var defaults = {
   debug: true
 };
 
-var regex = /\.tpl(\..+)$/;
+var regex = /\.(tpl|nunjucks)(\..+)$/;
 
 module.exports = through('nunjucks', function(file, config) {
   if(config.strict && !path.basename(file.path).match(regex)) return;
 
-  nunjucks.configure(process.cwd());
+  nunjucks.configure(file.base);
 
   var result = nunjucks.renderString(String(file.contents), config.locals);
   file.contents = new Buffer(result);
   if(config.rename) {
-    file.path = file.path.replace(regex, '$1');
+    file.path = file.path.replace(regex, '$2');
   }
 }, defaults);
