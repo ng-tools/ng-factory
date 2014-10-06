@@ -32,14 +32,17 @@ gulp.task('ng-factory:docs/readme', function() {
   // Fetch examples
   locals.examples = {};
   config.modules.map(function(name) {
-    locals.examples[name] = glob.sync(path.join(name, 'docs', 'examples', '*'), {cwd: src.cwd}).map(function(file) {
-      return {filename: path.join(src.cwd, file), basename: path.basename(file), extname: path.extname(file)};
+    locals.examples[name] = glob.sync(path.join(name, 'docs', 'inlined', '*'), {cwd: src.cwd}).map(function(file) {
+      return {filename: path.join(src.cwd, file), basename: path.basename(file), extname: path.extname(file).substr(1)};
     });
   });
 
   // Build readme from user-defined template that extends ng-factory's one
   return gulp.src('README.tpl.md', {cwd: docs.cwd})
-    .pipe(template({locals: locals}))
+    .pipe(template({
+      cwd : process.cwd(),
+      locals: locals
+    }))
     .pipe(gulp.dest('.'));
 
 });

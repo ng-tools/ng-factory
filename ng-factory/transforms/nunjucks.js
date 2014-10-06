@@ -15,7 +15,7 @@ var regex = /\.(tpl|nunjucks)(\..+)$/;
 module.exports = through('nunjucks', function(file, config) {
   if(config.strict && !path.basename(file.path).match(regex)) return;
 
-  nunjucks.configure(file.base);
+  nunjucks.configure(config.cwd || file.base)
 
   var result = nunjucks.renderString(String(file.contents), config.locals);
   file.contents = new Buffer(result);

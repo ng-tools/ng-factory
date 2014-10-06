@@ -19,7 +19,7 @@ $ bower install bar.jumbotron --save
 
 - **jumbotron** - [01-directive.html](src/jumbotron/docs/examples/01-directive.html)
 
-``` .html
+```html
 <!-- Default 'Hello World' jumbotron -->
 <div
   data-bar-jumbotron
@@ -43,7 +43,7 @@ $ bower install bar.jumbotron --save
 ```
 - **jumbotron** - [02-config.js](src/jumbotron/docs/examples/02-config.js)
 
-``` .js
+```js
 'use strict';
 
 angular.module('foo.example')
