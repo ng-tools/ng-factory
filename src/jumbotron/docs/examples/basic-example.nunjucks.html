@@ -1,0 +1,22 @@
+{% extends "views/base.nunjucks.html" %}
+
+{% block body %}
+<div ng-app="bar.jumbotron">
+  <div
+    data-bar-jumbotron
+    data-bar-jumbotron-title="A stand alone example here"
+    ></div>
+</div>
+{% endblock %}
+
+{% block foot %}
+
+<!-- build:libs scripts/components.min.js -->
+<!-- bowerDependencies:js -->
+<!-- bower installed scripts will go here... -->
+<!-- endinject -->
+<!-- endbuild -->
+
+<script src="/dist/jumbotron/jumbotron.js"></script>
+<script src="/dist/jumbotron/jumbotron.tpl.js"></script>
+{% endblock %}

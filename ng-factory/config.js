@@ -34,7 +34,7 @@ exports.src = {
 
 exports.docs = {
   cwd: 'docs',
-  templates: 'templates/gh-pages',
+  templates: 'templates/pages',
   readme: 'templates/readme',
   dest: 'pages',
   tmp: '.tmp/docs',

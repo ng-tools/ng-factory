@@ -21,10 +21,12 @@ global.debug = require('gulp-debug');
 // Tasks
 //
 
+require('./tasks/docs/browserSync.js');
 require('./tasks/docs/clean.js');
-require('./tasks/docs/connect.js');
+require('./tasks/docs/copy.js');
 require('./tasks/docs/ngdocs.js');
 require('./tasks/docs/readme.js');
+require('./tasks/docs/resolveDocsDependencies.js');
 require('./tasks/docs/scripts.js');
 require('./tasks/docs/styles.js');
 require('./tasks/docs/views.js');

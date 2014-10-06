@@ -24,7 +24,7 @@ $ bower install {{ pkg.name }} --save
 {% for example in examples[module] %}
 - **{{ module }}** - [{{ example.basename }}]({{ src.cwd }}/{{ module }}/docs/examples/{{ example.basename }})
 
-``` {{ example.extname }}
+```{{ example.extname }}
 {% include example.filename %}
 ```
 {%- endfor %}
