@@ -11,7 +11,6 @@ var changed = require('gulp-changed');
 var cwd = path.join(config.dirname, docs.templates);
 
 gulp.task('ng-factory:docs/copy:to(docs.tmp)', function () {
-
   var copyBase = gulp.src('./**/*', {cwd: cwd})
     .pipe(changed(docs.tmp))
     .pipe(gulp.dest(docs.tmp));
@@ -20,11 +19,13 @@ gulp.task('ng-factory:docs/copy:to(docs.tmp)', function () {
     .pipe(changed(docs.tmp))
     .pipe(gulp.dest(docs.tmp));
 
-  var copyDocs = gulp.src('docs/**/*')
-    .pipe(changed(docs.tmp))
-    .pipe(gulp.dest(docs.tmp));
-
-  return merge(copyBase, copySrcExamples, copyDocs);
+  return merge(copyBase, copySrcExamples)
+    .on('end', function () {
+      gulp.src('docs/**/*')
+        // Commented due to file conflict
+        //.pipe(changed(docs.tmp))
+        .pipe(gulp.dest(docs.tmp));
+    });
 });
 
 gulp.task('ng-factory:docs/copy:to(docs.dest)', function () {

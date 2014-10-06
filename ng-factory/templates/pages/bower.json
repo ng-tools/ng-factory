@@ -1,0 +1,9 @@
+{
+  "name": "ng-factory-doc-theme-bs",
+  "main": "styles/theme.css",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.2.0",
+    "font-awesome": "^4.1.0"
+  }
+}

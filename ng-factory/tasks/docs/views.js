@@ -72,13 +72,19 @@ gulp.task('ng-factory:docs/compileViews:to(docs.dest)', function (cb) {
         cwd: docs.tmp,
         base: docs.tmp,
         read: false
-      }), {name: 'bowerDependencies'}))
+      }), {
+        name: 'bowerDependencies',
+        relative: true
+      }))
 
       .pipe(inject(gulp.src(bwr.main, {
         cwd: docs.tmp,
         base: docs.tmp,
         read: false
-      }), {name: 'themeDependencies'}))
+      }), {
+        name: 'themeDependencies',
+        relative: true
+      }))
 
       .pipe(gulp.dest(docs.dest))
       .on('end', cb);
