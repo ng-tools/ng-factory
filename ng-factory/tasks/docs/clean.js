@@ -3,9 +3,11 @@
 var gulp = require('gulp');
 var config = require('./../../config'), docs = config.docs;
 
-var rimraf = require('gulp-rimraf');
+var del = require('del');
 
-gulp.task('ng-factory:docs/clean', function() {
-  return gulp.src([docs.tmp, docs.dest], {read: false})
-    .pipe(rimraf());
+gulp.task('ng-factory:docs/clean', function (cb) {
+  del(
+    [docs.tmp, docs.dest],
+    cb
+  );
 });
