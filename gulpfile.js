@@ -47,7 +47,11 @@ gulp.task('pages:update', function (cb) {
     'ng-factory:docs/readme:cacheGettingStarted',
     [
       'ng-factory:docs/compileViews:to(docs.dest)',
-      'dist'
+
+      // flatten dist
+      'ng-factory:src/templates:to(src.dest)',
+      'ng-factory:src/styles',
+      'ng-factory:src/scripts'
     ],
     'ng-factory:docs/copy:to(docs.dest)',
     cb);

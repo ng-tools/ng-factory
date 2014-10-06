@@ -65,7 +65,7 @@ gulp.task('ng-factory:docs/compileViews:to(docs.dest)', function (cb) {
 
   function renderTheViews(){
     return gulp.src(['*.nunjucks.html', '*/docs/examples/*.nunjucks.html'], {cwd: docs.tmp, base: docs.tmp})
-      //.pipe(changed(docs.dest))
+      //.pipe(changed(docs.tmp, { extension : '.html' }))
       .pipe(nunjucks({locals: locals, strict: true}))
 
       .pipe(inject(gulp.src(mainBowerFiles({paths: docs.tmp}), {
