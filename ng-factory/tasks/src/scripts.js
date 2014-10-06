@@ -7,6 +7,7 @@ var pkg = require(process.cwd() + '/package.json');
 var concat = require('gulp-concat-util');
 var sourcemaps = require('gulp-sourcemaps');
 var rename = require('gulp-rename');
+var changed = require('gulp-changed');
 
 var concatScripts = config.requireTransform('concat-scripts');
 var annotate = config.requireTransform('ng-annotate');
@@ -16,6 +17,7 @@ gulp.task('ng-factory:src/scripts', function() {
 
   // Build unified pkg.name scripts
   return gulp.src(src.scripts, {cwd: src.cwd})
+    .pipe(changed(src.dest))
     .pipe(sourcemaps.init())
     .pipe(annotate())
     .pipe(concatScripts(function(path) {

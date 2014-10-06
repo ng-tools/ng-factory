@@ -13,22 +13,22 @@ var cwd = path.join(config.dirname, docs.templates);
 gulp.task('ng-factory:docs/copy:to(docs.tmp)', function () {
 
   var copyBase = gulp.src('./**/*', {cwd: cwd})
-    .pipe(changed(docs.dest))
+    .pipe(changed(docs.tmp))
     .pipe(gulp.dest(docs.tmp));
 
   var copySrcExamples = gulp.src('{,*/}docs{,*/}examples/**/*', {cwd: src.cwd})
-    .pipe(changed(docs.dest))
+    .pipe(changed(docs.tmp))
     .pipe(gulp.dest(docs.tmp));
 
   var copyDocs = gulp.src('docs/**/*')
-    .pipe(changed(docs.dest))
+    .pipe(changed(docs.tmp))
     .pipe(gulp.dest(docs.tmp));
 
   return merge(copyBase, copySrcExamples, copyDocs);
 });
 
 gulp.task('ng-factory:docs/copy:to(docs.dest)', function () {
-
+  var docDest = path.join(docs.dest, src.dest);
   var copyBase = gulp.src([
       'bower_components/**/*',
       'styles/**/*',
@@ -40,7 +40,8 @@ gulp.task('ng-factory:docs/copy:to(docs.dest)', function () {
     .pipe(gulp.dest(docs.dest));
 
   var copyDistFiles = gulp.src('**/*', {cwd: src.dest})
-    .pipe(gulp.dest(path.join(docs.dest, src.dest)));
+    .pipe(changed(docDest))
+    .pipe(gulp.dest(docDest));
 
   return merge(copyBase, copyDistFiles);
 });

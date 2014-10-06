@@ -10,5 +10,15 @@ var run = require('run-sequence');
 
 gulp.task('my:doc/watch', function(){
 
+  gulp.watch('docs/bower.json', ['ng-factory:docs/resolveDocsDependencies']);
+
+  gulp.watch([
+    'docs/*',
+    '!docs/bower.json',
+
+    'src/*/*',
+    'src/*/docs/**/*'
+  ], ['pages:update']);
+
 });
 
