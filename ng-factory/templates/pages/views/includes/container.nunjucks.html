@@ -1,0 +1,34 @@
+{% for module in modules -%}
+<section id="module-{{ module }}">
+
+  <header class="page-header">
+    <h1 id="module-{{ module }}-title"> {{ module | title }}
+      <a class="small"
+         href="//github.com/{{ pkg.github.user }}/{{ pkg.github.repo }}/blob/src{{ pkg.version }}/{{ module }}"
+        >
+        {{module }}.js
+      </a>
+    </h1>
+  </header>
+
+
+  <h2 id="module-{{ module }}-examples">Examples</h2>
+
+
+  <ul>
+    {% for example in examples[module] %}
+    <li><a href="{{ example.ref }}">{{ example.name }}</a></li>
+    {%- endfor %}
+  </ul>
+
+  <h2 id="module-{{ module }}-usage">Usage</h2>
+  <h2 id="module-{{ module }}-options">Options</h2>
+
+  <div class="bs-markdown">
+
+  {{ ngdocs }}
+
+  </div>
+
+ </section>
+{%- endfor %}

@@ -33,7 +33,11 @@ gulp.task('pages', function (cb) {
     'ng-factory:docs/readme:cacheGettingStarted',
     [
       'ng-factory:docs/compileViews:to(docs.dest)',
-      'dist'
+
+      // flatten dist
+      'ng-factory:src/templates:to(src.dest)',
+      'ng-factory:src/styles',
+      'ng-factory:src/scripts'
     ],
     'ng-factory:docs/copy:to(docs.dest)',
 
@@ -64,8 +68,14 @@ gulp.task('readme', function (cb) {
     cb);
 });
 
-gulp.task('dist', function () {
-  run('ng-factory:src/clean', ['ng-factory:src/templates:to(src.dest)', 'ng-factory:src/styles', 'ng-factory:src/scripts']);
+gulp.task('dist', function (cb) {
+  run(
+    'ng-factory:src/clean',
+    [
+      'ng-factory:src/templates:to(src.dest)',
+      'ng-factory:src/styles', 'ng-factory:src/scripts'
+    ],
+    cb);
 });
 
 gulp.task('docs', function () {
@@ -97,4 +107,38 @@ gulp.task('coverage', function (cb) {
     'ng-factory:src/templates:to(src.tmp)',
     'ng-factory:src/karma:with(coverage)',
     cb);
+});
+
+gulp.task('release', function(cb){
+  run(
+    'ng-factory:src/bump',
+    'ng-factory:src/changelog',
+    'ng-factory:src/deploy:src',
+    cb);
+});
+
+gulp.task('publish', function(cb){
+  run(
+    'dist',
+    'ng-factory:src/changeLog:copy(dist)',
+    'ng-factory:src/deploy:dist',
+
+    'pages',
+    'ng-factory:src/deploy:pages',
+    cb);
+});
+
+gulp.task('ng-factory:ci:publish', function (cb) {
+
+  var allowPushOnRepo =
+    // On TRAVIS source tag.
+    (process.env.TRAVIS == 'true') && // on travis
+    (process.env.TRAVIS_PULL_REQUEST == 'false') && //  no a PR
+    /^src\d+\.\d+\.\d+.*$/.test(process.env.TRAVIS_BRANCH); // is a source tag
+
+  if (!allowPushOnRepo) {
+    return cb();
+  }
+
+  run('publish', cb);
 });

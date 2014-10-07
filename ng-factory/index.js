@@ -24,6 +24,7 @@ global.debug = require('gulp-debug');
 require('./tasks/docs/browserSync.js');
 require('./tasks/docs/clean.js');
 require('./tasks/docs/copy.js');
+require('./tasks/docs/deploy.js');
 require('./tasks/docs/ngdocs.js');
 require('./tasks/docs/readme.js');
 require('./tasks/docs/resolveDocsDependencies.js');
@@ -31,7 +32,10 @@ require('./tasks/docs/scripts.js');
 require('./tasks/docs/styles.js');
 require('./tasks/docs/views.js');
 
+require('./tasks/src/bump.js');
+require('./tasks/src/changelog.js');
 require('./tasks/src/clean.js');
+require('./tasks/src/deploy.js');
 require('./tasks/src/jshint.js');
 require('./tasks/src/scripts.js');
 require('./tasks/src/styles.js');
