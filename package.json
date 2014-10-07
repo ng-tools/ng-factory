@@ -1,6 +1,6 @@
 {
   "name": "bar.jumbotron",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Jumbotron are styled web site header.",
   "main": "Gulpfile.js",
   "scripts": {
@@ -24,7 +24,6 @@
   "bugs": {
     "url": "https://github.com/douglasduteil/angular-utility-belt/issues"
   },
-  "homepage": "https://github.com/douglasduteil/angular-utility-belt",
   "devDependencies": {
     "browser-sync": "^1",
     "chalk": "^0.5.1",
