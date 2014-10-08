@@ -1,3 +1,16 @@
+### 0.0.2 (2014-10-08)
+
+
+#### Bug Fixes
+
+* **pages:** no pkg object avalaible in the template ([6c69a3fe](https://github.com/douglasduteil/angular-utility-belt/commit/6c69a3fe8db7e61f9f05f52f7ee97520d149459f))
+
+
+#### Features
+
+* **pages:** Add static tag release bagde image ([c5c570de](https://github.com/douglasduteil/angular-utility-belt/commit/c5c570de1083204d9b549f8033c3aeee63f166ca))
+
+
 ### 0.0.1 (2014-10-08)
 
 
