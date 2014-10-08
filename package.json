@@ -1,6 +1,6 @@
 {
   "name": "bar.jumbotron",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Jumbotron are styled web site header.",
   "main": "Gulpfile.js",
   "scripts": {

@@ -1,3 +1,11 @@
+### 0.0.3 (2014-10-08)
+
+
+#### Bug Fixes
+
+* **deploy:** pages cwd conflic to get pkg ([afd6f281](https://github.com/douglasduteil/angular-utility-belt/commit/afd6f28130bc9d56622ccb215ae022a3c93833ba))
+
+
 ### 0.0.2 (2014-10-08)
 
 
