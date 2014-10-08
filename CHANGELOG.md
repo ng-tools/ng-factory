@@ -1,3 +1,20 @@
+### 0.0.1 (2014-10-08)
+
+
+#### Bug Fixes
+
+* **deploy:** add missing required path ([9c274435](https://github.com/douglasduteil/angular-utility-belt/commit/9c274435fa569ba99640d281aa62b2b929bc6ff7))
+
+
+#### Features
+
+* **config:** dont cache the pkg file ([d60903f6](https://github.com/douglasduteil/angular-utility-belt/commit/d60903f6ffc03beb1dc07a9602590090690e6f5d))
+* **deploy:**
+  * sweet getting last pkg version ([570da4fe](https://github.com/douglasduteil/angular-utility-belt/commit/570da4fe7f740bfb0eebb6b9f856e3f037cb1b47))
+  * update the pkg after bump ([634938cc](https://github.com/douglasduteil/angular-utility-belt/commit/634938cc9fa128d8c9ec719be6e63b575c5cf2ee))
+* **jumbotron:** fake important feature ([7f242fc7](https://github.com/douglasduteil/angular-utility-belt/commit/7f242fc73931d03a4fb5146d425b4cd91306ac17))
+
+
 ## 0.0.0 (2014-10-08)
 
 
