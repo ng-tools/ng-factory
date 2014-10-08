@@ -4,7 +4,7 @@
     "src/jumbotron/jumbotron.js",
     "src/jumbotron/jumbotron.tpl.html"
   ],
-  "version": "0.0.1",
+  "version": "0.0.0",
   "homepage": "https://github.com/douglasduteil/angular-utility-belt",
   "author": {
     "name": "Foo Bar",
