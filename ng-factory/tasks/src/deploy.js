@@ -1,5 +1,7 @@
 'use strict';
 
+var path = require('path');
+
 var gulp = require('gulp');
 var config = require('./../../config'), src = config.src, pkg = config.pkg;
 
