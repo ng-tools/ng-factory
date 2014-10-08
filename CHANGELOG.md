@@ -1,3 +1,11 @@
+### 0.0.4 (2014-10-08)
+
+
+#### Bug Fixes
+
+* **deploy:** forgot to re-enable the push... sry ([a7abbbbf](https://github.com/douglasduteil/angular-utility-belt/commit/a7abbbbf8a8bf48520ac7f9625099e9db562c236))
+
+
 ### 0.0.3 (2014-10-08)
 
 
