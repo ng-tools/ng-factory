@@ -3,13 +3,19 @@
 var config = exports;
 var gutil = require('gulp-util');
 var glob = require('glob');
-var pkg = require(process.cwd() + '/package.json');
+var fs = require('fs');
 
 exports.requireTransform = function(name){
   return require('./transforms/' + name);
 };
 
-exports.pkg = pkg;
+Object.defineProperty(exports, 'pkg', {
+  get: function() { return JSON.parse(fs.readFileSync(process.cwd() + '/package.json', 'utf8')); },
+  set: function(){}
+});
+
+var pkg = exports.pkg;
+
 var url = pkg.repository.url || pkg.repository;
 var split = url.replace(/\.git$/, '').split('/');
 pkg.repository.name = split.pop();
