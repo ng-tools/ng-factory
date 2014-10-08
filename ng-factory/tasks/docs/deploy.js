@@ -21,7 +21,7 @@ gulp.task('ng-factory:src/deploy:pages', function () {
   distWorkspace.extraCleanUp();
   distWorkspace.copy(docs.dest);
   distWorkspace.commit('demo(release): v' + pkg.version + '\n\nUpdate ' + new Date().toISOString());
-  //distWorkspace.push();
+  distWorkspace.push();
 
   process.chdir(restoreCwd);
 
