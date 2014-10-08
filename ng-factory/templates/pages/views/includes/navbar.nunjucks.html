@@ -8,9 +8,18 @@
       <ul class="nav navbar-nav navbar-right">
         {% for badge in badges -%}
         {% if badge.navbar -%}
-        <li><a href="{{ badge.url }}" target="_blank"><img title="{{ badge.title }}"  src="{{ badge.image }}" ></a></li>{%- endif %}
+        <li><a href="{{ badge.url }}" target="_blank"><img title="{{ badge.title }}" src="{{ badge.image }}"></a></li>
+        {%- endif %}
         {% endfor %}
-        <li><a href="//github.com/{{ pkg.github.user }}/{{ pkg.github.repo }}" target="_blank"><i class="fa fa-github"></i> GitHub</a></li>
+        <li>
+          <a href="//github.com/{{ pkg.github.user }}/{{ pkg.github.repo }}/releases/tag/{{ pkg.version }}"
+             target="_blank">
+            <img title="tag release"
+                 src="//img.shields.io/badge/release-{{ pkg.version }}-orange.svg">
+          </a>
+        </li>
+        <li><a href="//github.com/{{ pkg.github.user }}/{{ pkg.github.repo }}" target="_blank"><i
+          class="fa fa-github"></i> GitHub</a></li>
       </ul>
     </div>
   </div>
