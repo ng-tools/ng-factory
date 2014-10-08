@@ -1,6 +1,6 @@
 /**
  * bar.jumbotron
- * @version v0.0.1 - 2014-10-08
+ * @version v0.0.2 - 2014-10-08
  * @link https://github.com/douglasduteil/angular-utility-belt
  * @author Foo Bar <foo@bar.com> (https://github.com/foo)
  * @license MIT License, http://www.opensource.org/licenses/MIT
