@@ -29,6 +29,8 @@ gulp.task('ng-factory:docs/compileViews:to(docs.dest)', function (cb) {
   var bwr = require(path.join(config.cwd, docs.tmp, '/bower.json'));
 
   var locals = _.extend({}, config);
+  // Assign temporal pkg file version  by hand here. No getter.
+  locals.pkg = config.pkg;
 
   // HACK
   function postLocalsPopulation(then) {
