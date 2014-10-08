@@ -21,7 +21,8 @@ gulp.task('ng-factory:src/changelog', function(cb){
 
   conventionalChangelog({
     repository: pkg.homepage,
-    version: pkg.version
+    version: config.pkg.version,
+    from: 'src' + pkg.version
   }, changeParsed);
 
 });

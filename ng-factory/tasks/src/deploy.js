@@ -12,7 +12,7 @@ gulp.task('ng-factory:src/deploy:configPkgUpdate', function () {
 
   // FORCE up to date data
   // the 'package.json' can change in the previous tasks
-  config.pkg = require(path.resolve(process.cwd(), 'package.json'));
+  pkg = config.pkg;
 
 });
 

@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var config = require('./../../config'), docs = config.docs, pkg = config.pkg;
+var config = require('./../../config'), docs = config.docs;
 
 var Deployor = require('node-git-deployor');
 
@@ -17,7 +17,7 @@ gulp.task('ng-factory:src/deploy:pages', function () {
 
   distWorkspace.extraCleanUp();
   distWorkspace.copy(docs.dest);
-  distWorkspace.commit('demo(release): v' + pkg.version + '\n\nUpdate ' + new Date().toISOString());
+  distWorkspace.commit('demo(release): v' + config.pkg.version + '\n\nUpdate ' + new Date().toISOString());
   distWorkspace.push();
 
   process.chdir(restoreCwd);
