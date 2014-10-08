@@ -4,7 +4,7 @@ var fs = require('fs');
 var path = require('path');
 
 var gulp = require('gulp');
-var config = require('./../../config'), src = config.src;
+var config = require('./../../config'), src = config.src, pkg = config.pkg;
 
 var conventionalChangelog = require('conventional-changelog');
 
@@ -18,10 +18,6 @@ gulp.task('ng-factory:src/changelog', function(cb){
     }
     fs.writeFile(FILE_NAME, log, cb);
   }
-
-  // FORCE up to date data
-  // the 'package.json' can change in the previous tasks
-  var pkg = require(path.resolve(process.cwd(), 'package.json'));
 
   conventionalChangelog({
     repository: pkg.homepage,

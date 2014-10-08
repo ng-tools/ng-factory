@@ -112,6 +112,7 @@ gulp.task('coverage', function (cb) {
 gulp.task('release', function(cb){
   run(
     'ng-factory:src/bump',
+    'ng-factory:src/deploy:configPkgUpdate',
     'ng-factory:src/changelog',
     'ng-factory:src/deploy:src',
     cb);
