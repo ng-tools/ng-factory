@@ -1,270 +1,89 @@
-# bar.jumbotron
-[![Build Status](http://img.shields.io/travis/douglasduteil/angular-utility-belt.svg)](http://travis-ci.org/douglasduteil/angular-utility-belt) [![Coverage Status](http://img.shields.io/codeclimate/coverage/github/douglasduteil/angular-utility-belt.svg)](http://url) [![Github Releases](http://img.shields.io/badge/release-v0.1.0-orange.svg)](http://github.com/douglasduteil/angular-utility-belt/releases) [![Github Issues](http://img.shields.io/github/issues/douglasduteil/angular-utility-belt.svg)](http://github.com/douglasduteil/angular-utility-belt/issues) 
+# ng-factory
 
-<img align="right" height="200" src="http://icons.iconarchive.com/icons/igh0zt/ios7-style-metro-ui/512/MetroUI-Apps-Foobar-icon.png">
+## File slitting
 
-> Jumbotron are styled web site header.
+For the sake of clarity and coherence
 
-Bar's jumbotron  showcase key content on your site seamless integration of [Bootstrap 3.0+](https://github.com/twbs/bootstrap) into your [AngularJS 1.2+](https://github.com/angular/angular.js) app.
+- Main ng-factoty tasks are in the **tasks folder**
+- Template files are in the **templates folder**
+- Utility transforms are in the **transforms folder**
 
-<br/>
+## Tasks
 
-## Install
 
-``` sh
-$ bower install bar.jumbotron --save
-```
+Task name example : `ng-factory:src/jshint`.
+- `ng-factory` is the namespace
+- `src/jshint` the targeted task
 
-## Examples
+### ng-factory:src
 
-- **jumbotron** - [01-directive.html](src/jumbotron/docs/examples/01-directive.html)
+#### ng-factory:src/jshint
 
-```html
-<!-- Default 'Hello World' jumbotron -->
-<div
-  data-bar-jumbotron
-  ></div>
+Jshint the sources
 
 
-<!-- You can also use data-bar-jumbotron-title to change the title -->
-<div
-  data-bar-jumbotron
-  data-bar-jumbotron-title="S'Up !"
-  ></div>
+### ng-factory:test
 
+#### ng-factory:test/jshint
 
-<!-- or the inner class -->
-<div
-  data-bar-jumbotron
-  data-bar-jumbotron-class="jumbotron--baaaar"
-  ></div>
+Jshint the tests
 
 
-```
-- **jumbotron** - [02-config.js](src/jumbotron/docs/examples/02-config.js)
 
-```js
-'use strict';
+## Transforms
 
-angular.module('foo.example')
+Bypass gulp plugins directly using the official node lib to to the work.
 
-  .config(function (barJumbotronConfig) {
-    barJumbotronConfig.class = 'jumbotron--baaaar';
-  });
+### clean-css
 
-```
+### concat-scripts
 
-## Usage
+### debug
 
+### jade
 
+### js-beautify
 
+### less
 
+### ng-annotate
 
+### template
 
+### uglify-js
 
 
-### directive
+## Pages customization
 
+The pages are highly customizable. The pages templating is provided by (Nunjucks)[mozilla.github.io/nunjucks/].
 
+We integrate a default page with the factory but you can change everything if you please.
 
+The basic pages generation workflow is **copy every thing to the `.tmp/docs` folder and generate what you need to output in the `pages` folder**.
 
+### Default template
 
+`ng-factory/templates/pages/index.nunjucks.html` is the default template file.
 
+> [...] More documentation here [...]
 
 
-#### jumbotronDirective
+### Views Blocks
 
+By extending the `{% extends "views/base.nunjucks.html" %}` default template you can customize different blocks.
+**Note: you can use `{{ super() }}` to render parent blocks**
 
-The jumbotron directive. Have a sweet header.
+- **ng-factory/templates/pages/views/base.nunjucks.html**
+  - **head** for the `<head>` content
+  - **body** for the `<body>` content
+  - **foot** fot the "`<foot>`" content (what comes after the content into the body)
 
+### Includes Blocks
 
+- **ng-factory/templates/pages/views/includes/head.nunjucks.html**
+  - **headLinks** for the css scripts at the end of the `<head>` tag
 
+- **ng-factory/templates/pages/views/includes/foot.nunjucks.html**
+  - **footScripts** for the js scripts at the end of the `<body>` tag
 
-
-
-
-
-##### Arguments
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-
-
-<tr>
-  <td>
-    title  <em>(optional)</em>
-  </td>
-  <td>
-    
-    <code>string</code>
-    
-  </td>
-  <td>
-    <p>The jumbotron title.</p>
-
-    Defaults : <code>'Hello World'</code>
-  </td>
-</tr>
-
-<tr>
-  <td>
-    class  <em>(optional)</em>
-  </td>
-  <td>
-    
-    <code>string</code>
-    
-  </td>
-  <td>
-    <p>The jumbotron additional class.</p>
-
-    Defaults : <code>'jumbotron--bar'</code>
-  </td>
-</tr>
-
-
-
-  </tbody>
-</table>
-
-
-
-
-### object
-
-
-
-
-
-
-
-
-#### barJumbotronConfig
-
-
-
-
-
-
-
-
-
-
-##### Properties
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Param</th>
-      <th>Type</th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-
-
-<tr>
-  <td>
-    class  
-  </td>
-  <td>
-    
-    <code>string</code>
-    
-  </td>
-  <td>
-    <p>the class name</p>
-
-    
-  </td>
-</tr>
-
-<tr>
-  <td>
-    title  
-  </td>
-  <td>
-    
-    <code>string</code>
-    
-  </td>
-  <td>
-    <p>the title</p>
-
-    
-  </td>
-</tr>
-
-<tr>
-  <td>
-    templateUrl  
-  </td>
-  <td>
-    
-    <code>string</code>
-    
-  </td>
-  <td>
-    <p>the used template URL</p>
-
-    
-  </td>
-</tr>
-
-
-
-  </tbody>
-</table>
-
-
-
-
-
-
-
-## Dependencies
-
-Package | Version
-------- | -------
-angular | **^1**
-
-
-## Browser Support
-
-[![Browser Support](https://ci.testling.com/douglasduteil/angular-utility-belt.png)](http://ci.testling.com/douglasduteil/angular-utility-belt)
-
-## Contributing
-Please submit all pull requests the against master branch. If your unit test contains JavaScript patches or features, you should include relevant unit tests. Thanks!
-
-## License
-
-    The MIT License (MIT)
-    
-    Copyright (c) 2014 Douglas Duteil
-    
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-    
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-    
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
+> [...] More documentation here [...]

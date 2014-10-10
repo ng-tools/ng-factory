@@ -1,29 +1,29 @@
 {
-  "name": "bar.jumbotron",
-  "version": "0.0.4",
-  "description": "Jumbotron are styled web site header.",
-  "main": "Gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "ng-factory",
+  "version": "0.2.0",
+  "description": "AngularJS industrialized development",
+  "main": "./lib/index",
+  "homepage": "https://github.com/angular-widgets/ng-factory",
+  "bugs": "https://github.com/angular-widgets/ng-factory/issues",
+  "author": {
+    "name": "Angular Widgets Team",
+    "email": "angular@widgets.com",
+    "url": "https://github.com/angular-widgets"
+  },
+  "github": {
+    "user": "angular-widgets",
+    "repo": "ng-factory"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/douglasduteil/angular-utility-belt.git"
+    "url": "https://github.com/angular-widgets/ng-factory.git"
   },
-  "author": {
-    "name": "Foo Bar",
-    "email": "foo@bar.com",
-    "url": "https://github.com/foo"
-  },
-  "github": {
-    "user": "douglasduteil",
-    "repo": "angular-utility-belt"
-  },
-  "homepage": "https://github.com/douglasduteil/angular-utility-belt",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/douglasduteil/angular-utility-belt/issues"
-  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/angular-widgets/LICENSE"
+    }
+  ],
   "devDependencies": {
     "browser-sync": "^1",
     "chalk": "^0.5.1",
@@ -84,5 +84,8 @@
     "ngdoc-parser": "0.0.5",
     "node-git-deployor": "^0.1.0",
     "wiredep": "^1.8.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
