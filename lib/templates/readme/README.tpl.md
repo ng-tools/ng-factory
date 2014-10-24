@@ -46,9 +46,7 @@ Package | Version
 {{ dependency }} | **{{ version }}**
 {% endfor %}
 
-## Browser Support
 
-[![Browser Support](https://ci.testling.com/{{ url }}.png)](http://ci.testling.com/{{ url }})
 
 ## Contributing
 {% block contributing -%}
