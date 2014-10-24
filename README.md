@@ -1,5 +1,16 @@
 # ng-factory
 
+An **upgradable** development workflow library built on top of Gulp and focused on AngularJS components and applications.
+
+**ng-factory** is based on **best practices** and covers the whole development lifecycle : 
+
+ - **Developement** : code quality, preprocessors...
+ - **Build** : minification, concat, inject...
+ - **Documentation** : README + HTML doc & examples...
+ - **Publication** : TRAVIS CI integration, releases branches...
+
+
+
 ## File slitting
 
 For the sake of clarity and coherence
