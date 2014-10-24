@@ -8,13 +8,14 @@
 
 {% block header -%}
 > {{ pkg.description }}
+
 {% block description -%}
 {%- endblock %}
 {%- endblock %}
 
 ## Install
 
-``` sh
+```sh
 $ bower install {{ pkg.name }} --save
 ```
 
