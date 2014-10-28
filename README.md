@@ -10,6 +10,30 @@ An **upgradable** development workflow library built on top of Gulp and focused 
  - **Publication** : TRAVIS CI integration, releases branches...
 
 
+## Customisation
+
+### Customize the README
+
+You can customize the README by adding a `docs/README.tpl.md`. This is a [nunjucks](http://mozilla.github.io/nunjucks/) template and it extends the [default ng-factory template](lib/templates/readme/README.tpl.md).
+
+### Add examples
+
+Add examples in the `docs/examples` folder, with a subfolder for each example.
+Each example can have a single HTML file and any number of CSS, SCSS... and javascript files.
+
+### Add Travis-CI
+
+ - signup to [travis-ci.com](http://travis-ci.com)
+ - activate your repository
+
+### Add CodeClimate
+
+ - signup to [codeclimate.com](http://codeclimate.com)
+ - activate your repository
+ - add the token to `.travis.yml`
+
+
+
 
 ## File slitting
 
