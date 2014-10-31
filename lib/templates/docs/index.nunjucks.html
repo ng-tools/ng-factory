@@ -1,0 +1,54 @@
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ pkg.name }} - {{ pkg.description }}</title>
+  <meta name="description" content="{{ pkg.description }}"/>
+
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.0/es5-shim.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <![endif]-->
+
+  <!-- Favicon  -->
+  <link rel="icon" href="http://angularjs.org/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="http://angularjs.org/favicon.ico" type="image/x-icon">
+  <!-- Author of this application  -->
+  <link rel="author" href="{{ pkg.author.url }}">
+
+  <!-- bower:css -->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <!-- endinject -->
+
+  <style>
+    .bs-docs-nav {
+      background-color: {{ geopattern.color }};
+      border-color: {{ geopattern.color }};
+    }
+    .bs-jumbotron {
+      background-color: {{ geopattern.color }};
+      background-image: url({{ geopattern.data }});
+    }
+  </style>
+
+</head>
+<body>
+
+  {% include "views/includes/navbar.nunjucks.html" %}
+  {% include "views/includes/header.nunjucks.html" %}
+  <div class="container">
+    {% block gettingStarted %}
+    {{ gettingStarted }}
+    {% endblock %}
+    {% include "views/includes/container.nunjucks.html" %}
+  </div>
+  {% include "views/includes/footer.nunjucks.html" %}
+
+  <!-- bower:js -->
+  <!-- endinject -->
+  <!-- inject:js -->
+  <!-- endinject -->
+
+</body>
+</html>
