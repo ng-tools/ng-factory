@@ -1,0 +1,7 @@
+<a href="{{ example.ref }}">{{ example.name }}</a>
+{% for file in example.files %}
+{{ file.extname }}
+  <pre>
+{{ file.src }}
+  </pre>
+{%- endfor %}

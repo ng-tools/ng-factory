@@ -11,11 +11,15 @@
     </h1>
   </header>
 
+  <p>{{ module.description or pkg.description }}</p>
+
   <h2 id="module-{{ module }}-examples">Examples</h2>
 
-  <ul>
+  <ul class="docs-examples">
     {% for example in examples[module] %}
-    <li><a href="{{ example.ref }}">{{ example.name }}</a></li>
+    <li>
+      {% include "views/partials/example.tpl.html" %}
+    </li>
     {%- endfor %}
   </ul>
 
