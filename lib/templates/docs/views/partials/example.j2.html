@@ -1,0 +1,21 @@
+
+<h3><a href="{{ example.ref }}">{{ example.name }}</a></h3>
+
+<div bs-tabs>
+{% for file in example.files %}
+  <div class="well" title="{{ file.basename }}" bs-pane>
+{% if file.extname == 'html' -%}
+    <div append-source>
+{{ file.contents }}
+    </div>
+{%- else %}
+    <pre>
+      <code>
+{{ file.contents }}
+      </code>
+    </pre>
+{%- endif %}
+  </div>
+{%- endfor %}
+</div>
+

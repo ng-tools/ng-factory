@@ -37,19 +37,21 @@
 </head>
 <body>
 
-  {% include "views/includes/navbar.nunjucks.html" %}
-  {% include "views/includes/header.nunjucks.html" %}
+  {% include "views/includes/navbar.j2.html" %}
+  {% include "views/includes/header.j2.html" %}
   <div class="container">
     {% block gettingStarted %}
     {{ gettingStarted }}
     {% endblock %}
-    {% include "views/includes/container.nunjucks.html" %}
+    {% include "views/includes/container.j2.html" %}
   </div>
-  {% include "views/includes/footer.nunjucks.html" %}
+  {% include "views/includes/footer.j2.html" %}
 
   <!-- bower:js -->
   <!-- endinject -->
   <!-- inject:js -->
+  <!-- endinject -->
+  <!-- src:js -->
   <!-- endinject -->
 
 </body>
