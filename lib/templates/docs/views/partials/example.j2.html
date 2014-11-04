@@ -1,5 +1,5 @@
 
-<h3><a href="{{ example.ref }}">{{ example.name }}</a></h3>
+<h3><a href="{{ pkg.homepage }}/blob/master/docs/examples/{{ example.name }}" target="_blank">{{ example.name }}</a></h3>
 
 <div bs-tabs>
 {% for file in example.files %}
@@ -10,7 +10,7 @@
     </div>
 {%- else %}
     <pre>
-      <code>
+      <code class="{{ file.extname }}" hljs>
 {{ file.contents }}
       </code>
     </pre>
@@ -18,4 +18,3 @@
   </div>
 {%- endfor %}
 </div>
-

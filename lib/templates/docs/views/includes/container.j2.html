@@ -3,10 +3,8 @@
 
   <header class="page-header">
     <h1 id="module-{{ module }}-title"> {{ module | title }}
-      <a class="small"
-         href="//github.com/{{ pkg.github.user }}/{{ pkg.github.repo }}/blob/master/{{ module }}}.js"
-        >
-        {{module }}.js
+      <a class="small" href="{{ pkg.homepage }}/blob/master/src/{{ module }}.js" target="_blank">
+        {{ module }}.js
       </a>
     </h1>
   </header>
@@ -14,7 +12,6 @@
   <p>{{ module.description or pkg.description }}</p>
 
   <h2 id="module-{{ module }}-examples">Examples</h2>
-
   <ul class="docs-examples">
     {% for example in examples[module].examples %}
     <li>
@@ -24,11 +21,11 @@
   </ul>
 
   <h2 id="module-{{ module }}-usage">Usage</h2>
-  <h2 id="module-{{ module }}-options">Options</h2>
-
   <div class="bs-markdown">
 
-  {{ ngdocs }}
+    {% for ngdoc in ngdocs %}
+      {{ ngdoc.contents }}
+    {%- endfor %}
 
   </div>
 
