@@ -1,6 +1,6 @@
 {
   "name": "ng-factory",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "AngularJS industrialized development",
   "main": "./lib/index",
   "homepage": "https://github.com/ng-tools/ng-factory",
