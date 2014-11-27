@@ -3,7 +3,7 @@
 
 <div bs-tabs>
 {% for file in example.files %}
-  <div class="well" title="{{ file.basename }}" bs-pane>
+  <div title="{{ file.basename }}" bs-pane>
 {% if file.extname == 'html' -%}
     <div append-source>
 {{ file.contents }}

@@ -1,0 +1,94 @@
+/*
+ * Examples
+ *
+ * Isolated sections of example content for each component or feature. Usually
+ * followed by a code snippet.
+ */
+
+.docs-examples {
+  list-style: none;
+  padding: 0;
+}
+
+.docs-example {
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 -15px 15px;
+  background-color: #fafafa;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+
+  // Echo out a label for the example
+  &:after {
+    content: "Example";
+    position: absolute;
+    top:  15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+}
+
+/* Tweak display of the code snippets when following an example */
+.docs-example + .highlight {
+  margin: -15px -15px 15px;
+  border-radius: 0;
+  border-width: 0 0 1px;
+}
+
+/* Make the examples and snippets not full-width */
+@media (min-width: 768px) {
+  .docs-example {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fff;
+    border-width: 1px;
+    border-color: #ddd;
+    border-radius: 4px 4px 0 0;
+    box-shadow: none;
+  }
+  .docs-example + .highlight {
+    margin-top: -16px;
+    margin-left: 0;
+    margin-right: 0;
+    border-width: 1px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+/* Undo width of container */
+.docs-example .container {
+  width: auto;
+}
+
+/* Tweak content of examples for optimum awesome */
+.docs-example > p:last-child,
+.docs-example > ul:last-child,
+.docs-example > ol:last-child,
+.docs-example > blockquote:last-child,
+.docs-example > .form-control:last-child,
+.docs-example > .table:last-child,
+.docs-example > .navbar:last-child,
+.docs-example > .jumbotron:last-child,
+.docs-example > .alert:last-child,
+.docs-example > .panel:last-child,
+.docs-example > .list-group:last-child,
+.docs-example > .well:last-child,
+.docs-example > .progress:last-child,
+.docs-example > .table-responsive:last-child > .table {
+  margin-bottom: 0;
+}
+.docs-example > p > .close {
+  float: none;
+}
+
+.docs-example .nav-tabs {
+  margin-bottom: 15px;
+}

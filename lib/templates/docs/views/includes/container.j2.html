@@ -7,6 +7,7 @@
         {{ module }}.js
       </a>
     </h1>
+    <code>{{ pkg.module }}</code>
   </header>
 
   <p>{{ module.description or pkg.description }}</p>
@@ -14,7 +15,7 @@
   <h2 id="module-{{ module }}-examples">Examples</h2>
   <ul class="docs-examples">
     {% for example in examples[module].examples %}
-    <li>
+    <li class="docs-example">
       {% include "views/partials/example.j2.html" %}
     </li>
     {%- endfor %}
