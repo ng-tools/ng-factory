@@ -1,6 +1,6 @@
 {
   "name": "ng-factory",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "AngularJS industrialized development",
   "main": "./lib/index",
   "homepage": "https://github.com/ng-tools/ng-factory",
@@ -29,6 +29,7 @@
     "findup-sync": "^0.2.1",
     "geopattern": "^1.2.3",
     "glob": "^4.3.2",
+    "gulp": "^3.8.10",
     "gulp-angular-filesort": "^1.0.4",
     "gulp-bump": "^0.1.11",
     "gulp-changed": "^1.1.0",
@@ -59,6 +60,7 @@
     "ngdoc-parser": "0.0.5",
     "node-git-deployor": "^0.1.0",
     "nunjucks": "^1.1.0",
+    "run-sequence": "^1.0.2",
     "stream-combiner": "^0.2.1",
     "through2": "^0.6.3"
   },
