@@ -30,7 +30,7 @@
     "geopattern": "^1.2.3",
     "glob": "^4.3.2",
     "gulp": "^3.8.10",
-    "gulp-angular-filesort": "^1.0.4",
+    "gulp-angular-filesort": "git+https://github.com/mgcrea/gulp-angular-filesort.git",
     "gulp-bump": "^0.1.11",
     "gulp-changed": "^1.1.0",
     "gulp-concat-util": "^0.5.1",
