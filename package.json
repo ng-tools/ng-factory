@@ -44,7 +44,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-through": "^0.3.0",
     "gulp-util": "^3.0.3",
-    "gulp-watch": "^4.1.0",
+    "gulp-watch": "1.2.1",
     "jshint-stylish": "^1",
     "karma": "^0",
     "karma-chrome-launcher": "^0",
