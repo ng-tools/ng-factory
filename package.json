@@ -61,6 +61,7 @@
     "node-git-deployor": "^0.1.0",
     "nunjucks": "^1.1.0",
     "run-sequence": "^1.0.2",
+    "semver": "^4.2.0",
     "stream-combiner": "^0.2.1",
     "through2": "^0.6.3"
   },
