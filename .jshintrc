@@ -1,6 +1,6 @@
 {
   "node": true,
-  "browser": true,
+  "browser": false,
   "devel": false,
   "esnext": true,
   "bitwise": true,
@@ -21,8 +21,5 @@
   "smarttabs": true,
   "boss": false,
   "eqnull": false,
-  "expr": true,
-  "globals": {
-    "angular": false
-  }
+  "expr": true
 }
