@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "cwd": "^0.6.0",
+    "lodash": "^3.6.0",
     "ng-cli": "^0.5.4",
     "resolve-dep": "^0.5.3",
     "undertaker": "^0.8.0",
