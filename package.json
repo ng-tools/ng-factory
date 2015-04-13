@@ -6,6 +6,15 @@
   "bin": {
     "ng": "bin/ng.js"
   },
+  "author": {
+    "name": "Olivier Louvignes",
+    "email": "olivier@mg-crea.com",
+    "url": "https://github.com/mgcrea"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ng-tools/ng-factory.git"
+  },
   "dependencies": {
     "cwd": "^0.6.0",
     "lodash": "^3.6.0",
@@ -18,6 +27,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
   "license": "MIT"
 }
