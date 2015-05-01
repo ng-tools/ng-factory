@@ -21,6 +21,7 @@
     "lodash": "^3.7.0",
     "ng-cli": "^0.7.0",
     "resolve-dep": "^0.5.3",
+    "tildify": "^1.0.0",
     "undertaker": "^0.10.0",
     "undertaker-registry": "0.0.2"
   },
