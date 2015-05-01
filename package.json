@@ -16,6 +16,7 @@
     "url": "https://github.com/ng-tools/ng-factory.git"
   },
   "dependencies": {
+    "chalk": "^1.0.0",
     "cwd": "^0.6.0",
     "lodash": "^3.7.0",
     "ng-cli": "^0.7.0",
