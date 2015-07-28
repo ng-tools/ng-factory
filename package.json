@@ -16,14 +16,14 @@
     "url": "https://github.com/ng-tools/ng-factory.git"
   },
   "dependencies": {
-    "chalk": "^1.0.0",
-    "cwd": "^0.6.0",
-    "lodash": "^3.7.0",
+    "chalk": "^1.1.0",
+    "cwd": "^0.7.0",
+    "lodash": "^3.10.0",
     "ng-cli": "^0.7.0",
     "resolve-dep": "^0.5.3",
-    "tildify": "^1.0.0",
-    "undertaker": "^0.10.0",
-    "undertaker-registry": "0.0.2"
+    "tildify": "^1.1.0",
+    "undertaker": "^0.11.1",
+    "undertaker-registry": "0.0.3"
   },
   "devDependencies": {},
   "scripts": {
