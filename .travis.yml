@@ -1,15 +1,4 @@
----
 language: node_js
+sudo: false
 node_js:
-- '0.10'
-before_install:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- npm install -qg bower gulp
-- npm install -q
-- bower install
-script: gulp
-after_success:
-- git config --global user.email "tracis@ci.org"
-- git config --global user.name "Travis Bot"
-- gulp ng-factory:ci:publish
+  - "stable"
